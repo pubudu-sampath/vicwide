@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#091f34">
-<meta name="description" content="VICWIDE Facility Management provides cleaning, maintenance, security, landscaping, housekeeping, waste management and pest control services across New South Wales and Western Australia.">
+<meta name="description" content="VICWIDE Facility Management provides cleaning, housekeeping, maintenance, security, landscaping and integrated facility services across NSW and WA.">
 <title>VICWIDE | Facility Management</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,52 +16,65 @@
 :root {
   --navy:#091f34;
   --gold:#f5ba37;
+  --gold-hover:#ffcf69;
   --ink:#122c40;
-  --body:#526878;
-  --cloud:#f3f7f9;
-  --line:#dfe8ec;
+  --muted:#526878;
+  --surface:#f3f7f9;
+  --line:#e0e8ec;
   --green:#488f79;
 }
+
 * {box-sizing:border-box}
 html {scroll-behavior:smooth;scroll-padding-top:100px}
 body {
   margin:0;
-  color:var(--body);
-  font:16px/1.75 'DM Sans',sans-serif;
+  background:white;
+  color:var(--muted);
+  font:16px/1.75 "DM Sans",sans-serif;
 }
 h1,h2,h3 {
-  font-family:'Manrope',sans-serif;
-  color:var(--ink);
-  line-height:1.18;
-  letter-spacing:-.045em;
   margin:0;
+  color:var(--ink);
+  font-family:"Manrope",sans-serif;
+  line-height:1.2;
+  letter-spacing:-.045em;
 }
 p {margin:0}
-a {text-decoration:none;color:inherit}
+a {color:inherit;text-decoration:none}
 button,input,select,textarea {font:inherit}
 button {cursor:pointer}
 img {display:block;max-width:100%}
-.container {max-width:1240px;padding:0 34px;margin:auto}
-.section {padding:95px 0}
+[hidden] {display:none!important}
+
+.container {
+  max-width:1240px;
+  padding:0 34px;
+  margin:auto;
+}
+section {padding:95px 0}
 .eyebrow {
-  color:#b68114;
-  text-transform:uppercase;
   font-size:12px;
   font-weight:800;
   letter-spacing:.16em;
-  margin-bottom:15px;
+  text-transform:uppercase;
+  color:#b58012;
+  margin-bottom:18px;
 }
 .section-title {
   font-size:clamp(34px,4vw,54px);
-  margin-bottom:24px;
   font-weight:800;
+  margin-bottom:23px;
 }
-.lead {font-size:17px;line-height:1.85}
+.lead {
+  font-size:17px;
+  line-height:1.85;
+  max-width:720px;
+}
 .btn {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:14px;
+  gap:12px;
   padding:15px 24px;
   border:0;
   border-radius:8px;
@@ -71,29 +84,34 @@ img {display:block;max-width:100%}
   font-weight:800;
   transition:.25s;
 }
-.btn:hover {background:#ffcf69;transform:translateY(-2px)}
-a:focus-visible,button:focus-visible,summary:focus-visible,
-input:focus-visible,select:focus-visible,textarea:focus-visible {
+.btn:hover {
+  background:var(--gold-hover);
+  transform:translateY(-2px);
+}
+:focus-visible {
   outline:3px solid var(--gold);
   outline-offset:3px;
 }
 
 /* TOP INFORMATION BAR */
+
 .topbar {
   background:#071a2b;
-  color:#d6e1e8;
+  color:#d5e0e8;
   padding:10px 0;
   font-size:12px;
 }
 .topbar-inner {
   display:flex;
   justify-content:space-between;
-  gap:20px;
   align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
 }
 .topbar strong {color:var(--gold)}
 
 /* HEADER */
+
 header {
   background:white;
   position:sticky;
@@ -105,69 +123,75 @@ header {
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:25px;
   min-height:84px;
-  gap:20px;
 }
 .logo {
-  color:var(--navy);
-  font:800 29px/1 'Manrope',sans-serif;
+  font:800 28px/1 "Manrope",sans-serif;
   letter-spacing:-.085em;
+  color:var(--navy);
   white-space:nowrap;
 }
 .logo span {color:#d99b12}
 .logo small {
   display:block;
-  font-size:10px;
-  letter-spacing:.19em;
   margin-top:10px;
-  color:#59778c;
+  color:#557286;
+  font-size:10px;
+  letter-spacing:.2em;
   font-weight:800;
   text-transform:uppercase;
 }
-nav {display:flex;align-items:center;gap:30px}
+nav {
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
 nav a:not(.btn) {
+  color:var(--ink);
   font-size:13px;
   font-weight:700;
-  color:var(--ink);
 }
-nav a:hover {color:#b78921}
+nav a:not(.btn):hover {color:#bb8310}
 .menu-toggle {
   display:none;
   border:0;
   background:none;
   color:var(--navy);
-  font-size:27px;
+  font-size:28px;
 }
 
-/* HOMEPAGE */
+/* HERO */
+
 .hero {
+  padding:65px 0 90px;
   background:linear-gradient(180deg,#f6f9fb,#fff);
-  padding:70px 0 85px;
 }
-.hero-heading {
-  font-size:clamp(40px,5.7vw,76px);
+.hero-title {
+  font-size:clamp(40px,5.6vw,76px);
   font-weight:800;
-  letter-spacing:-.065em;
-  margin:20px 0 35px;
+  letter-spacing:-.07em;
+  margin:20px 0 38px;
 }
-.hero-heading span {color:#6b8293}
+.hero-title span {color:#6b8293}
 
-/* SLIDER */
+/* IMAGE SLIDER */
+
 .slider {
   position:relative;
   overflow:hidden;
-  border-radius:17px;
-  background:#e2e8ed;
-  box-shadow:0 23px 55px rgba(9,31,52,.14);
+  border-radius:18px;
+  background:#dfe8ec;
+  box-shadow:0 24px 60px rgba(9,31,52,.13);
   touch-action:pan-y;
 }
 .slides {
   display:flex;
-  transition:transform .65s ease;
+  transition:transform .65s cubic-bezier(.22,.61,.36,1);
 }
 .slide {
-  min-width:100%;
   position:relative;
+  flex:0 0 100%;
   height:clamp(360px,52vw,650px);
 }
 .slide img {
@@ -180,19 +204,19 @@ nav a:hover {color:#b78921}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(0deg,rgba(9,31,52,.15),transparent 50%);
+  background:linear-gradient(0deg,rgba(8,25,38,.15),transparent 55%);
   pointer-events:none;
 }
 .slide-caption {
   position:absolute;
+  bottom:47px;
+  left:45px;
   z-index:2;
-  left:44px;
-  bottom:45px;
   background:var(--gold);
   color:var(--navy);
-  border-radius:10px;
   padding:25px 34px;
-  font:800 clamp(19px,2.2vw,30px)/1.35 'Manrope',sans-serif;
+  border-radius:10px;
+  font:800 clamp(18px,2.2vw,30px)/1.32 "Manrope",sans-serif;
   max-width:550px;
 }
 .slider-arrow {
@@ -200,16 +224,15 @@ nav a:hover {color:#b78921}
   z-index:5;
   top:50%;
   transform:translateY(-50%);
-  height:48px;
   width:48px;
-  border-radius:50%;
-  border:0;
-  background:rgba(255,255,255,.92);
-  color:var(--navy);
-  font-size:25px;
+  height:48px;
   display:grid;
   place-items:center;
-  transition:.2s;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.93);
+  color:var(--navy);
+  font-size:24px;
 }
 .slider-arrow:hover {background:var(--gold)}
 .slider-prev {left:16px}
@@ -217,7 +240,7 @@ nav a:hover {color:#b78921}
 .slider-dots {
   position:absolute;
   z-index:5;
-  bottom:15px;
+  bottom:17px;
   left:50%;
   transform:translateX(-50%);
   display:flex;
@@ -226,17 +249,18 @@ nav a:hover {color:#b78921}
 .slider-dot {
   width:10px;
   height:10px;
+  padding:0;
   border:0;
   border-radius:20px;
   background:rgba(255,255,255,.65);
-  padding:0;
 }
 .slider-dot.active {
   width:30px;
   background:var(--gold);
 }
 
-/* ABOUT */
+/* ABOUT US */
+
 .about-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -244,9 +268,9 @@ nav a:hover {color:#b78921}
   align-items:center;
 }
 .about-photo {
-  position:relative;
   height:490px;
   border-radius:12px;
+  position:relative;
   background:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1100&q=85") center/cover;
 }
 .about-badge {
@@ -254,25 +278,34 @@ nav a:hover {color:#b78921}
   left:25px;
   bottom:25px;
   background:var(--gold);
-  border-radius:7px;
   color:var(--navy);
-  padding:22px;
-  font:800 18px/1.4 'Manrope',sans-serif;
+  padding:20px;
+  border-radius:7px;
+  font-size:18px;
+  font-weight:800;
+  line-height:1.35;
 }
 .about-content p {margin-bottom:20px}
-.benefits {display:grid;gap:13px;margin-top:25px}
-.benefits div {color:var(--ink);font-size:14px;font-weight:700}
+.benefits {
+  display:grid;
+  gap:14px;
+  margin-top:25px;
+  font-weight:700;
+  color:var(--ink);
+  font-size:14px;
+}
 .benefits div::before {
   content:"✓";
   color:var(--green);
   background:#e4f2ea;
-  padding:2px 7px;
   border-radius:50%;
+  padding:2px 7px;
   margin-right:12px;
 }
 
 /* VISION AND MISSION */
-.vision {background:var(--cloud)}
+
+.vision {background:var(--surface)}
 .vision-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -280,17 +313,25 @@ nav a:hover {color:#b78921}
 }
 .vision-card {
   background:white;
+  padding:38px;
   border:1px solid var(--line);
   border-top:4px solid var(--gold);
-  padding:38px;
   border-radius:9px;
 }
-.vision-card:nth-child(2) {border-top-color:var(--green)}
-.vision-card h3 {font-size:24px;margin-bottom:15px}
+.vision-card:nth-child(2) {
+  border-top-color:var(--green);
+}
+.vision-card h3 {
+  font-size:24px;
+  margin-bottom:15px;
+}
 
-/* SERVICES: COMPACT ACCORDION */
-.services {background:#fff}
-.services-intro {max-width:750px;margin-bottom:38px}
+/* EXPANDABLE SERVICES */
+
+.services-intro {
+  max-width:760px;
+  margin-bottom:38px;
+}
 .service-list {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -304,7 +345,9 @@ nav a:hover {color:#b78921}
   overflow:hidden;
   transition:border-color .2s,box-shadow .2s;
 }
-.service-item:hover {border-color:#e0b94e}
+.service-item:hover {
+  border-color:#e0b94e;
+}
 .service-item[open] {
   border-color:#dbad35;
   box-shadow:0 8px 26px rgba(9,31,52,.07);
@@ -313,34 +356,33 @@ nav a:hover {color:#b78921}
   display:flex;
   align-items:center;
   gap:16px;
-  list-style:none;
-  cursor:pointer;
-  min-height:82px;
   padding:20px 23px;
+  min-height:82px;
+  cursor:pointer;
+  list-style:none;
 }
 .service-item summary::-webkit-details-marker {display:none}
 .service-item summary::marker {content:""}
 .service-number {
+  min-width:27px;
   color:#b38017;
-  font-weight:800;
   font-size:12px;
-  min-width:25px;
+  font-weight:800;
 }
 .service-name {
-  font:800 16px/1.45 'Manrope',sans-serif;
-  color:var(--ink);
   flex:1;
+  color:var(--ink);
+  font:800 16px/1.45 "Manrope",sans-serif;
 }
 .service-plus {
-  height:30px;
   width:30px;
-  background:#f1f5f7;
-  border-radius:50%;
+  height:30px;
   display:grid;
   place-items:center;
+  background:#f1f5f7;
   color:var(--ink);
+  border-radius:50%;
   font-size:23px;
-  line-height:1;
   transition:transform .2s;
 }
 .service-item[open] .service-plus {
@@ -353,7 +395,8 @@ nav a:hover {color:#b78921}
   line-height:1.85;
 }
 
-/* SECONDARY CALL TO ACTION */
+/* CALL TO ACTION */
+
 .banner {
   background:var(--navy);
   color:white;
@@ -368,12 +411,13 @@ nav a:hover {color:#b78921}
 .banner h2 {
   color:white;
   font-size:clamp(28px,3.3vw,42px);
-  margin-bottom:13px;
+  margin-bottom:12px;
 }
 .banner p {max-width:630px}
 
 /* SUSTAINABILITY */
-.sustainability {background:var(--cloud)}
+
+.sustainability {background:var(--surface)}
 .sustainability-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -385,9 +429,13 @@ nav a:hover {color:#b78921}
   border-radius:9px;
   padding:35px;
 }
-.info-card h3 {font-size:22px;margin-bottom:15px}
+.info-card h3 {
+  font-size:22px;
+  margin-bottom:15px;
+}
 
 /* LOCATIONS */
+
 .locations-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -395,14 +443,18 @@ nav a:hover {color:#b78921}
   margin-top:34px;
 }
 .location-card {
-  background:var(--cloud);
+  background:var(--surface);
   border:1px solid var(--line);
   border-radius:10px;
   padding:35px;
 }
-.location-card h3 {font-size:23px;margin-bottom:13px}
+.location-card h3 {
+  font-size:23px;
+  margin-bottom:13px;
+}
 
 /* CONTACT */
+
 .contact {
   background:var(--navy);
   color:#cbd9e3;
@@ -415,26 +467,32 @@ nav a:hover {color:#b78921}
 .contact h2 {color:white}
 .contact-intro {margin-bottom:32px}
 .contact-info {
-  border-top:1px solid rgba(255,255,255,.16);
   padding:20px 0;
+  border-top:1px solid rgba(255,255,255,.16);
 }
 .contact-info strong {
   display:block;
+  margin-bottom:5px;
   color:var(--gold);
   text-transform:uppercase;
   letter-spacing:.12em;
   font-size:12px;
-  margin-bottom:5px;
 }
 .contact-info a:hover {color:var(--gold)}
 .contact-form {
-  background:white;
   padding:36px;
-  border-radius:10px;
+  background:white;
   color:var(--ink);
+  border-radius:10px;
 }
-.contact-form h3 {font-size:26px;margin-bottom:10px}
-.contact-form > p {font-size:14px;margin-bottom:23px}
+.contact-form h3 {
+  font-size:26px;
+  margin-bottom:10px;
+}
+.contact-form > p {
+  font-size:14px;
+  margin-bottom:23px;
+}
 .form-row {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -443,23 +501,31 @@ nav a:hover {color:#b78921}
 .field {
   display:flex;
   flex-direction:column;
-  font-size:13px;
-  font-weight:700;
   gap:7px;
   margin-bottom:16px;
+  font-weight:700;
+  font-size:13px;
 }
 .field input,.field select,.field textarea {
-  padding:12px;
   width:100%;
+  padding:12px;
   border:1px solid #dce5e9;
   border-radius:6px;
-  color:var(--ink);
   background:white;
+  color:var(--ink);
 }
-.field textarea {min-height:120px;resize:vertical}
-.form-note {font-size:13px;color:var(--green);margin-top:12px}
+.field textarea {
+  min-height:120px;
+  resize:vertical;
+}
+.form-note {
+  color:var(--green);
+  font-size:13px;
+  margin-top:12px;
+}
 
 /* FOOTER */
+
 footer {
   background:#071a2b;
   color:#b9c8d3;
@@ -473,24 +539,35 @@ footer .logo {color:white}
   gap:30px;
   padding-bottom:35px;
 }
-.footer-grid p {font-size:14px;max-width:420px;margin-top:22px}
-.footer-links {display:flex;gap:22px;flex-wrap:wrap;font-size:13px}
+.footer-grid p {
+  font-size:14px;
+  max-width:420px;
+  margin-top:22px;
+}
+.footer-links {
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  font-size:13px;
+}
 .footer-links a:hover {color:var(--gold)}
 .footer-bottom {
-  border-top:1px solid rgba(255,255,255,.15);
   padding-top:23px;
+  border-top:1px solid rgba(255,255,255,.15);
   font-size:13px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
+
 @media(max-width:1000px) {
-  nav {gap:16px}
   .about-grid {gap:35px}
   .contact-grid {gap:35px}
+  nav {gap:16px}
 }
+
 @media(max-width:800px) {
   .container {padding:0 20px}
-  .section {padding:65px 0}
+  section {padding:65px 0}
   .topbar-inner span:last-child {display:none}
   .header-inner {min-height:72px}
   .menu-toggle {display:block}
@@ -508,23 +585,30 @@ footer .logo {color:white}
   }
   nav.open {display:flex}
   .hero {padding:48px 0}
-  .hero-heading {font-size:clamp(34px,8vw,53px)}
+  .hero-title {font-size:clamp(34px,8vw,53px)}
   .slide {height:440px}
   .slide-caption {
     left:20px;
+    right:20px;
     bottom:55px;
     padding:20px;
     font-size:20px;
   }
-  .slider-arrow {height:37px;width:37px;font-size:20px}
-  .about-grid,
-  .vision-grid,
-  .sustainability-grid,
-  .locations-grid,
+  .slider-arrow {
+    width:39px;
+    height:39px;
+    font-size:20px;
+  }
+  .about-grid,.vision-grid,
+  .sustainability-grid,.locations-grid,
   .contact-grid {grid-template-columns:1fr}
   .about-photo {height:360px}
-  .banner-inner {flex-direction:column;align-items:flex-start}
+  .banner-inner {
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
+
 @media(max-width:620px) {
   .service-list {grid-template-columns:1fr}
   .form-row {grid-template-columns:1fr}
@@ -532,9 +616,15 @@ footer .logo {color:white}
   .slide-caption {font-size:17px}
   .footer-grid {flex-direction:column}
   .contact-form {padding:24px}
-  .service-item summary {min-height:68px;padding:16px}
-  .service-description {padding:0 20px 20px 58px}
+  .service-item summary {
+    min-height:68px;
+    padding:16px;
+  }
+  .service-description {
+    padding:0 20px 20px 58px;
+  }
 }
+
 @media(prefers-reduced-motion:reduce) {
   html {scroll-behavior:auto}
   .slides {transition:none}
@@ -555,10 +645,11 @@ footer .logo {color:white}
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- NAVIGATION -->
 <header>
   <div class="container header-inner">
-    <a href="#top" class="logo" aria-label="VICWIDE Home">
+
+    <a href="#top" class="logo">
       VIC<span>WIDE</span>
       <small>Facility Management</small>
     </a>
@@ -574,21 +665,22 @@ footer .logo {color:white}
       <a href="#sustainability">Sustainability</a>
       <a href="#areas">Locations</a>
       <a href="#contact" class="btn">
-        Get a Quote <span aria-hidden="true">↗</span>
+        Get a Quote ↗
       </a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
-<!-- HOMEPAGE -->
+<!-- HOME / SLIDER -->
 <section class="hero">
   <div class="container">
 
     <div class="eyebrow">Integrated Facilities Management</div>
 
-    <h1 class="hero-heading">
+    <h1 class="hero-title">
       One team.
       <span>Every part of your building.</span>
     </h1>
@@ -599,19 +691,17 @@ footer .logo {color:white}
 
       <div class="slides" id="slides">
 
-        <!-- SLIDE 1 -->
         <div class="slide">
-          <img src="assets/hero-slide-1.png"
-            alt="Modern commercial building"
+          <img src="assets/hero-slide-1.jpg"
+            alt="Modern commercial facility"
             fetchpriority="high">
           <div class="slide-caption">
             Your building.<br>Our responsibility.
           </div>
         </div>
 
-        <!-- SLIDE 2 -->
         <div class="slide">
-          <img src="assets/hero-slide-2.png"
+          <img src="assets/hero-slide-2.jpg"
             alt="Clean corporate office lobby"
             loading="lazy">
           <div class="slide-caption">
@@ -619,10 +709,9 @@ footer .logo {color:white}
           </div>
         </div>
 
-        <!-- SLIDE 3 -->
         <div class="slide">
-          <img src="assets/hero-slide-3.png"
-            alt="Well-managed commercial property"
+          <img src="assets/hero-slide-3.jpg"
+            alt="Well-maintained commercial property"
             loading="lazy">
           <div class="slide-caption">
             Well-managed spaces.<br>Lasting impressions.
@@ -631,26 +720,29 @@ footer .logo {color:white}
 
       </div>
 
-      <button class="slider-arrow slider-prev"
-        id="previousSlide" aria-label="Previous slide">&#10094;</button>
+      <button id="previousSlide"
+        class="slider-arrow slider-prev"
+        aria-label="Previous slide">&#10094;</button>
 
-      <button class="slider-arrow slider-next"
-        id="nextSlide" aria-label="Next slide">&#10095;</button>
+      <button id="nextSlide"
+        class="slider-arrow slider-next"
+        aria-label="Next slide">&#10095;</button>
 
       <div class="slider-dots">
         <button class="slider-dot active" data-slide="0"
-          aria-label="Show first slide"></button>
+          aria-label="Show slide 1"></button>
         <button class="slider-dot" data-slide="1"
-          aria-label="Show second slide"></button>
+          aria-label="Show slide 2"></button>
         <button class="slider-dot" data-slide="2"
-          aria-label="Show third slide"></button>
+          aria-label="Show slide 3"></button>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section id="about">
   <div class="container about-grid">
 
     <div class="about-photo">
@@ -692,17 +784,19 @@ footer .logo {color:white}
         <div>Sustainable and collaborative outcomes</div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- VISION AND MISSION -->
-<section class="section vision">
+<section class="vision">
   <div class="container">
 
     <div class="eyebrow">What Drives Us</div>
     <h2 class="section-title">Our vision and mission.</h2>
 
     <div class="vision-grid">
+
       <article class="vision-card">
         <h3>Our Vision</h3>
         <p>
@@ -724,145 +818,234 @@ footer .logo {color:white}
           of managing this process off their shoulders.
         </p>
       </article>
-    </div>
 
+    </div>
   </div>
 </section>
 
-<!-- OUR SEVEN SERVICES -->
-<section class="section services" id="services">
+<!-- SERVICES -->
+<section id="services">
   <div class="container">
 
     <div class="services-intro">
       <div class="eyebrow">Our Expertise</div>
       <h2 class="section-title">
-        Everything your site needs, in one place.
+        Complete solutions. One seamless experience.
       </h2>
       <p class="lead">
-        Choose a single service or combine several.
-        Every contract comes with one point of contact
-        and clear reporting.
+        Explore our 16 facility management services.
+        Select a service to view its details.
       </p>
     </div>
 
+    <!-- Cleaning-related services first -->
     <div class="service-list">
 
-      <!-- 01 SECURITY -->
       <details class="service-item">
         <summary>
           <span class="service-number">01</span>
-          <span class="service-name">Security</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Cleaning</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Trained security professionals protect your
-            building or property and keep restricted
-            areas secure.
-          </p>
+          Our cleaning services cover routine office and
+          facility cleaning as well as periodic and deep
+          cleans, tailored to site requirements.
         </div>
       </details>
 
-      <!-- 02 MAINTENANCE -->
       <details class="service-item">
         <summary>
           <span class="service-number">02</span>
-          <span class="service-name">Maintenance</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Housekeeping</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Our multi-skilled tradespeople and handymen
-            cover repairs inside and out, including
-            electrical, plumbing, carpentry, gardening,
-            odd jobs and general fix-ups.
-          </p>
+          We coordinate housekeeping for accommodation
+          and hospitality properties, helping maintain
+          comfortable and presentable spaces for guests.
         </div>
       </details>
 
-      <!-- 03 LANDSCAPING -->
       <details class="service-item">
         <summary>
           <span class="service-number">03</span>
-          <span class="service-name">Landscaping</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Stewarding</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Well-kept grounds give your property a
-            professional first impression. Our gardeners
-            handle mowing, planting and general grounds
-            care, using lower-emission, quieter equipment
-            to limit disruption.
-          </p>
+          Kitchen stewarding services support clean,
+          organised and safe food preparation and
+          service environments.
         </div>
       </details>
 
-      <!-- 04 CLEANING -->
       <details class="service-item">
         <summary>
           <span class="service-number">04</span>
-          <span class="service-name">Cleaning</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Waste Management</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Janitorial and cleaning services for offices
-            and facilities, from weekly or fortnightly
-            routines to occasional deep cleans, delivered
-            by trained cleaners to a consistently high
-            standard.
-          </p>
+          Waste collection and handling services support
+          tidy premises, with recycling and resource
+          recovery options where appropriate.
         </div>
       </details>
 
-      <!-- 05 HOUSEKEEPING -->
       <details class="service-item">
         <summary>
           <span class="service-number">05</span>
-          <span class="service-name">Housekeeping</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Pest Control</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            We manage housekeeping for properties of every
-            size, from small family-owned apartments and
-            hotels to larger chains, so guests enjoy their
-            stay and you have one less thing to manage.
-          </p>
+          We help identify and manage pest concerns
+          through appropriate treatment and prevention
+          measures for your site.
         </div>
       </details>
 
-      <!-- 06 WASTE MANAGEMENT -->
       <details class="service-item">
         <summary>
           <span class="service-number">06</span>
-          <span class="service-name">Waste Management</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Landscaping</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Collection, treatment and disposal of all waste
-            types in any volume, plus recycling and
-            resource recovery where possible.
-          </p>
+          We care for gardens, lawns and external grounds
+          to maintain a clean, welcoming and professional
+          environment with minimal disruption.
         </div>
       </details>
 
-      <!-- 07 PEST CONTROL -->
       <details class="service-item">
         <summary>
           <span class="service-number">07</span>
-          <span class="service-name">Pest Control</span>
-          <span class="service-plus" aria-hidden="true">+</span>
+          <span class="service-name">Asset Management</span>
+          <span class="service-plus">+</span>
         </summary>
         <div class="service-description">
-          <p>
-            Qualified technicians deal with insects,
-            rodents, weeds and other pests. We identify
-            the risks to your site and bring them under
-            control before they become problems.
-          </p>
+          We manage building assets, equipment and
+          facilities through coordinated upkeep that
+          supports safe, practical and comfortable spaces.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">08</span>
+          <span class="service-name">Concierge</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          A helpful first point of contact for guests
+          and visitors, supporting a welcoming experience
+          across accommodation and commercial premises.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">09</span>
+          <span class="service-name">Mechanical and Electrical Systems</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          Qualified contractors help maintain essential
+          electrical and mechanical systems to minimise
+          disruption and keep operations running smoothly.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">10</span>
+          <span class="service-name">Fire and Compliance</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          We coordinate inspection and servicing of
+          fire safety systems to support building safety,
+          compliance and emergency readiness.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">11</span>
+          <span class="service-name">Energy Management</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          We review energy consumption and utilities to
+          identify practical opportunities to improve
+          efficiency and reduce operating costs.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">12</span>
+          <span class="service-name">Security</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          Security professionals help protect your
+          premises and maintain appropriate control
+          over restricted areas.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">13</span>
+          <span class="service-name">Maintenance</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          Our maintenance team assists with electrical
+          work, plumbing, carpentry, minor repairs and
+          general property upkeep indoors and outdoors.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">14</span>
+          <span class="service-name">Space Planning</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          We help plan practical, comfortable spaces
+          that work for your people, visitors and
+          day-to-day business activities.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">15</span>
+          <span class="service-name">Event Planning and Catering</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          We assist with event logistics, venue
+          coordination, catering and supporting services
+          for business and private occasions.
+        </div>
+      </details>
+
+      <details class="service-item">
+        <summary>
+          <span class="service-number">16</span>
+          <span class="service-name">Stationery and Office Supplies</span>
+          <span class="service-plus">+</span>
+        </summary>
+        <div class="service-description">
+          We support stock control and replenishment
+          of workplace essentials so teams have the
+          supplies they need.
         </div>
       </details>
 
@@ -888,8 +1071,9 @@ footer .logo {color:white}
 </section>
 
 <!-- SUSTAINABILITY -->
-<section class="section sustainability" id="sustainability">
+<section id="sustainability" class="sustainability">
   <div class="container">
+
     <div class="eyebrow">Sustainable Facilities</div>
     <h2 class="section-title">
       Better buildings.<br>A lighter footprint.
@@ -900,7 +1084,7 @@ footer .logo {color:white}
         <h3>Environmental Consciousness</h3>
         <p>
           We build sustainability into daily work:
-          low-impact products, responsible disposal,
+          low-impact products, responsible disposal
           and equipment choices that reduce harm
           to the environment.
         </p>
@@ -915,17 +1099,19 @@ footer .logo {color:white}
         </p>
       </article>
     </div>
+
   </div>
 </section>
 
 <!-- LOCATIONS -->
-<section class="section" id="areas">
+<section id="areas">
   <div class="container">
 
     <div class="eyebrow">Our Locations</div>
     <h2 class="section-title">
       Local presence. Reliable support.
     </h2>
+
     <p class="lead">
       With offices in Parramatta and Maddington,
       we look after sites across New South Wales
@@ -955,7 +1141,7 @@ footer .logo {color:white}
 </section>
 
 <!-- CONTACT -->
-<section class="section contact" id="contact">
+<section class="contact" id="contact">
   <div class="container contact-grid">
 
     <div>
@@ -979,8 +1165,8 @@ footer .logo {color:white}
 
       <div class="contact-info">
         <strong>Email</strong>
-        <a href="mailto:vicwidefacilitymanagement@gmail.com">
-          vicwidefacilitymanagement@gmail.com
+        <a href="mailto:info@vicwide.com">
+          info@vicwide.com
         </a>
       </div>
 
@@ -1016,13 +1202,22 @@ footer .logo {color:white}
         Service Needed
         <select name="service" required>
           <option value="">Select a service</option>
-          <option>Security</option>
-          <option>Maintenance</option>
-          <option>Landscaping</option>
           <option>Cleaning</option>
           <option>Housekeeping</option>
+          <option>Stewarding</option>
           <option>Waste Management</option>
           <option>Pest Control</option>
+          <option>Landscaping</option>
+          <option>Asset Management</option>
+          <option>Concierge</option>
+          <option>Mechanical and Electrical Systems</option>
+          <option>Fire and Compliance</option>
+          <option>Energy Management</option>
+          <option>Security</option>
+          <option>Maintenance</option>
+          <option>Space Planning</option>
+          <option>Event Planning and Catering</option>
+          <option>Stationery and Office Supplies</option>
           <option>Multiple Services</option>
         </select>
       </label>
@@ -1033,11 +1228,12 @@ footer .logo {color:white}
           placeholder="Tell us about your site, location and requirements..."></textarea>
       </label>
 
-      <button type="submit" class="btn">
+      <button class="btn" type="submit">
         Send Enquiry ↗
       </button>
 
       <p class="form-note" id="formNote" role="status"></p>
+
     </form>
   </div>
 </section>
@@ -1072,11 +1268,13 @@ footer .logo {color:white}
     <div class="footer-bottom">
       &copy; 2026 VICWIDE Facility Management.
     </div>
+
   </div>
 </footer>
 
 <script>
-/* MOBILE NAVIGATION */
+/* MOBILE MENU */
+
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
@@ -1094,16 +1292,19 @@ mainNav.querySelectorAll("a").forEach(link => {
   });
 });
 
-/* IMAGE SLIDER */
+/* SLIDER */
+
 const slidesTrack = document.getElementById("slides");
 const slider = document.getElementById("heroSlider");
 const dots = document.querySelectorAll(".slider-dot");
 const slideElements = document.querySelectorAll(".slide");
+
 let currentSlide = 0;
-let startX = null;
+let touchStartX = null;
 
 function showSlide(index) {
   const total = slideElements.length;
+
   currentSlide = (index + total) % total;
 
   slidesTrack.style.transform =
@@ -1131,11 +1332,10 @@ document.getElementById("previousSlide")
 document.getElementById("nextSlide")
   .addEventListener("click", () => showSlide(currentSlide + 1));
 
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => showSlide(i));
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => showSlide(index));
 });
 
-/* KEYBOARD NAVIGATION */
 slider.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") {
     event.preventDefault();
@@ -1146,23 +1346,27 @@ slider.addEventListener("keydown", event => {
   }
 });
 
-/* TOUCH SWIPING */
 slider.addEventListener("touchstart", event => {
-  startX = event.changedTouches[0].screenX;
+  touchStartX = event.changedTouches[0].screenX;
 }, {passive:true});
 
 slider.addEventListener("touchend", event => {
-  if (startX === null) return;
-  const difference = event.changedTouches[0].screenX - startX;
-  if (Math.abs(difference) > 45) {
-    showSlide(currentSlide + (difference < 0 ? 1 : -1));
+  if (touchStartX === null) return;
+
+  const distance =
+    event.changedTouches[0].screenX - touchStartX;
+
+  if (Math.abs(distance) > 45) {
+    showSlide(currentSlide + (distance < 0 ? 1 : -1));
   }
-  startX = null;
+
+  touchStartX = null;
 }, {passive:true});
 
 showSlide(0);
 
-/* SERVICES: OPEN ONE AT A TIME */
+/* EXPANDABLE SERVICES: OPEN ONE AT A TIME */
+
 const serviceItems = document.querySelectorAll(".service-item");
 
 serviceItems.forEach(item => {
@@ -1176,31 +1380,32 @@ serviceItems.forEach(item => {
 });
 
 /* CONTACT FORM */
+
 const enquiryForm = document.getElementById("enquiryForm");
 
 enquiryForm.addEventListener("submit", event => {
   event.preventDefault();
 
   const data = new FormData(enquiryForm);
+
   const name = data.get("name");
   const email = data.get("email");
   const service = data.get("service");
   const message = data.get("message");
 
   const subject = "Quote request: " + service;
+
   const body =
     "Name: " + name + "\n" +
     "Email: " + email + "\n" +
     "Service: " + service + "\n\n" +
     "Message:\n" + message;
 
-  const recipient = "info@vicwide.com";
-
   document.getElementById("formNote").textContent =
     "Opening your email application to send the enquiry.";
 
   window.location.href =
-    "mailto:" + recipient +
+    "mailto:info@vicwide.com" +
     "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
 });
