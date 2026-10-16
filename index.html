@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#091f34">
-<meta name="description" content="VICWIDE Facility Management provides cleaning, housekeeping, maintenance, security, landscaping and integrated facility services across NSW and WA.">
+<meta name="description" content="VICWIDE Facility Management provides professional cleaning, housekeeping, maintenance, security, landscaping and integrated facility services across NSW and WA.">
 <title>VICWIDE | Facility Management</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,13 +25,19 @@
 }
 
 * {box-sizing:border-box}
-html {scroll-behavior:smooth;scroll-padding-top:100px}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
 body {
   margin:0;
   background:white;
   color:var(--muted);
   font:16px/1.75 "DM Sans",sans-serif;
 }
+
 h1,h2,h3 {
   margin:0;
   color:var(--ink);
@@ -39,6 +45,7 @@ h1,h2,h3 {
   line-height:1.2;
   letter-spacing:-.045em;
 }
+
 p {margin:0}
 a {color:inherit;text-decoration:none}
 button,input,select,textarea {font:inherit}
@@ -51,7 +58,9 @@ img {display:block;max-width:100%}
   padding:0 34px;
   margin:auto;
 }
+
 section {padding:95px 0}
+
 .eyebrow {
   font-size:12px;
   font-weight:800;
@@ -60,16 +69,19 @@ section {padding:95px 0}
   color:#b58012;
   margin-bottom:18px;
 }
+
 .section-title {
   font-size:clamp(34px,4vw,54px);
   font-weight:800;
   margin-bottom:23px;
 }
+
 .lead {
   font-size:17px;
   line-height:1.85;
   max-width:720px;
 }
+
 .btn {
   display:inline-flex;
   align-items:center;
@@ -84,16 +96,18 @@ section {padding:95px 0}
   font-weight:800;
   transition:.25s;
 }
+
 .btn:hover {
   background:var(--gold-hover);
   transform:translateY(-2px);
 }
+
 :focus-visible {
   outline:3px solid var(--gold);
   outline-offset:3px;
 }
 
-/* TOP INFORMATION BAR */
+/* TOP BAR */
 
 .topbar {
   background:#071a2b;
@@ -101,6 +115,7 @@ section {padding:95px 0}
   padding:10px 0;
   font-size:12px;
 }
+
 .topbar-inner {
   display:flex;
   justify-content:space-between;
@@ -108,6 +123,7 @@ section {padding:95px 0}
   flex-wrap:wrap;
   gap:10px;
 }
+
 .topbar strong {color:var(--gold)}
 
 /* HEADER */
@@ -119,6 +135,7 @@ header {
   z-index:100;
   box-shadow:0 4px 20px rgba(9,31,52,.07);
 }
+
 .header-inner {
   display:flex;
   align-items:center;
@@ -126,13 +143,16 @@ header {
   gap:25px;
   min-height:84px;
 }
+
 .logo {
   font:800 28px/1 "Manrope",sans-serif;
   letter-spacing:-.085em;
   color:var(--navy);
   white-space:nowrap;
 }
+
 .logo span {color:#d99b12}
+
 .logo small {
   display:block;
   margin-top:10px;
@@ -142,17 +162,21 @@ header {
   font-weight:800;
   text-transform:uppercase;
 }
+
 nav {
   display:flex;
   align-items:center;
   gap:30px;
 }
+
 nav a:not(.btn) {
   color:var(--ink);
   font-size:13px;
   font-weight:700;
 }
+
 nav a:not(.btn):hover {color:#bb8310}
+
 .menu-toggle {
   display:none;
   border:0;
@@ -161,18 +185,20 @@ nav a:not(.btn):hover {color:#bb8310}
   font-size:28px;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero {
   padding:65px 0 90px;
   background:linear-gradient(180deg,#f6f9fb,#fff);
 }
+
 .hero-title {
   font-size:clamp(40px,5.6vw,76px);
   font-weight:800;
   letter-spacing:-.07em;
   margin:20px 0 38px;
 }
+
 .hero-title span {color:#6b8293}
 
 /* IMAGE SLIDER */
@@ -185,28 +211,37 @@ nav a:not(.btn):hover {color:#bb8310}
   box-shadow:0 24px 60px rgba(9,31,52,.13);
   touch-action:pan-y;
 }
+
 .slides {
   display:flex;
   transition:transform .65s cubic-bezier(.22,.61,.36,1);
 }
+
 .slide {
   position:relative;
   flex:0 0 100%;
   height:clamp(360px,52vw,650px);
 }
+
 .slide img {
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
 }
+
 .slide::after {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(0deg,rgba(8,25,38,.15),transparent 55%);
+  background:linear-gradient(
+    0deg,
+    rgba(8,25,38,.15),
+    transparent 55%
+  );
   pointer-events:none;
 }
+
 .slide-caption {
   position:absolute;
   bottom:47px;
@@ -219,6 +254,7 @@ nav a:not(.btn):hover {color:#bb8310}
   font:800 clamp(18px,2.2vw,30px)/1.32 "Manrope",sans-serif;
   max-width:550px;
 }
+
 .slider-arrow {
   position:absolute;
   z-index:5;
@@ -234,9 +270,11 @@ nav a:not(.btn):hover {color:#bb8310}
   color:var(--navy);
   font-size:24px;
 }
+
 .slider-arrow:hover {background:var(--gold)}
 .slider-prev {left:16px}
 .slider-next {right:16px}
+
 .slider-dots {
   position:absolute;
   z-index:5;
@@ -246,6 +284,7 @@ nav a:not(.btn):hover {color:#bb8310}
   display:flex;
   gap:9px;
 }
+
 .slider-dot {
   width:10px;
   height:10px;
@@ -254,6 +293,7 @@ nav a:not(.btn):hover {color:#bb8310}
   border-radius:20px;
   background:rgba(255,255,255,.65);
 }
+
 .slider-dot.active {
   width:30px;
   background:var(--gold);
@@ -267,12 +307,14 @@ nav a:not(.btn):hover {color:#bb8310}
   gap:65px;
   align-items:center;
 }
+
 .about-photo {
   height:490px;
   border-radius:12px;
   position:relative;
   background:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1100&q=85") center/cover;
 }
+
 .about-badge {
   position:absolute;
   left:25px;
@@ -285,7 +327,9 @@ nav a:not(.btn):hover {color:#bb8310}
   font-weight:800;
   line-height:1.35;
 }
+
 .about-content p {margin-bottom:20px}
+
 .benefits {
   display:grid;
   gap:14px;
@@ -294,6 +338,7 @@ nav a:not(.btn):hover {color:#bb8310}
   color:var(--ink);
   font-size:14px;
 }
+
 .benefits div::before {
   content:"✓";
   color:var(--green);
@@ -306,11 +351,13 @@ nav a:not(.btn):hover {color:#bb8310}
 /* VISION AND MISSION */
 
 .vision {background:var(--surface)}
+
 .vision-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:24px;
 }
+
 .vision-card {
   background:white;
   padding:38px;
@@ -318,26 +365,30 @@ nav a:not(.btn):hover {color:#bb8310}
   border-top:4px solid var(--gold);
   border-radius:9px;
 }
+
 .vision-card:nth-child(2) {
   border-top-color:var(--green);
 }
+
 .vision-card h3 {
   font-size:24px;
   margin-bottom:15px;
 }
 
-/* EXPANDABLE SERVICES */
+/* SERVICES - WITHOUT NUMBERS */
 
 .services-intro {
   max-width:760px;
   margin-bottom:38px;
 }
+
 .service-list {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   align-items:start;
   gap:14px 20px;
 }
+
 .service-item {
   background:white;
   border:1px solid var(--line);
@@ -345,36 +396,38 @@ nav a:not(.btn):hover {color:#bb8310}
   overflow:hidden;
   transition:border-color .2s,box-shadow .2s;
 }
+
 .service-item:hover {
   border-color:#e0b94e;
 }
+
 .service-item[open] {
   border-color:#dbad35;
   box-shadow:0 8px 26px rgba(9,31,52,.07);
 }
+
 .service-item summary {
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:16px;
   padding:20px 23px;
   min-height:82px;
   cursor:pointer;
   list-style:none;
 }
+
 .service-item summary::-webkit-details-marker {display:none}
 .service-item summary::marker {content:""}
-.service-number {
-  min-width:27px;
-  color:#b38017;
-  font-size:12px;
-  font-weight:800;
-}
+
 .service-name {
   flex:1;
   color:var(--ink);
   font:800 16px/1.45 "Manrope",sans-serif;
 }
+
 .service-plus {
+  flex-shrink:0;
   width:30px;
   height:30px;
   display:grid;
@@ -385,12 +438,14 @@ nav a:not(.btn):hover {color:#bb8310}
   font-size:23px;
   transition:transform .2s;
 }
+
 .service-item[open] .service-plus {
   transform:rotate(45deg);
   background:#fff3d2;
 }
+
 .service-description {
-  padding:0 25px 24px 64px;
+  padding:0 23px 24px 23px;
   font-size:14px;
   line-height:1.85;
 }
@@ -402,33 +457,39 @@ nav a:not(.btn):hover {color:#bb8310}
   color:white;
   padding:65px 0;
 }
+
 .banner-inner {
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:36px;
 }
+
 .banner h2 {
   color:white;
   font-size:clamp(28px,3.3vw,42px);
   margin-bottom:12px;
 }
+
 .banner p {max-width:630px}
 
 /* SUSTAINABILITY */
 
 .sustainability {background:var(--surface)}
+
 .sustainability-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:24px;
 }
+
 .info-card {
   background:white;
   border:1px solid var(--line);
   border-radius:9px;
   padding:35px;
 }
+
 .info-card h3 {
   font-size:22px;
   margin-bottom:15px;
@@ -442,34 +503,40 @@ nav a:not(.btn):hover {color:#bb8310}
   gap:24px;
   margin-top:34px;
 }
+
 .location-card {
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:10px;
   padding:35px;
 }
+
 .location-card h3 {
   font-size:23px;
   margin-bottom:13px;
 }
 
-/* CONTACT */
+/* CONTACT SECTION */
 
 .contact {
   background:var(--navy);
   color:#cbd9e3;
 }
+
 .contact-grid {
   display:grid;
   grid-template-columns:.85fr 1.15fr;
   gap:70px;
 }
+
 .contact h2 {color:white}
 .contact-intro {margin-bottom:32px}
+
 .contact-info {
   padding:20px 0;
   border-top:1px solid rgba(255,255,255,.16);
 }
+
 .contact-info strong {
   display:block;
   margin-bottom:5px;
@@ -478,26 +545,32 @@ nav a:not(.btn):hover {color:#bb8310}
   letter-spacing:.12em;
   font-size:12px;
 }
+
 .contact-info a:hover {color:var(--gold)}
+
 .contact-form {
   padding:36px;
   background:white;
   color:var(--ink);
   border-radius:10px;
 }
+
 .contact-form h3 {
   font-size:26px;
   margin-bottom:10px;
 }
+
 .contact-form > p {
   font-size:14px;
   margin-bottom:23px;
 }
+
 .form-row {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:15px;
 }
+
 .field {
   display:flex;
   flex-direction:column;
@@ -506,7 +579,10 @@ nav a:not(.btn):hover {color:#bb8310}
   font-weight:700;
   font-size:13px;
 }
-.field input,.field select,.field textarea {
+
+.field input,
+.field select,
+.field textarea {
   width:100%;
   padding:12px;
   border:1px solid #dce5e9;
@@ -514,10 +590,12 @@ nav a:not(.btn):hover {color:#bb8310}
   background:white;
   color:var(--ink);
 }
+
 .field textarea {
   min-height:120px;
   resize:vertical;
 }
+
 .form-note {
   color:var(--green);
   font-size:13px;
@@ -531,7 +609,9 @@ footer {
   color:#b9c8d3;
   padding:50px 0 25px;
 }
+
 footer .logo {color:white}
+
 .footer-grid {
   display:flex;
   justify-content:space-between;
@@ -539,18 +619,22 @@ footer .logo {color:white}
   gap:30px;
   padding-bottom:35px;
 }
+
 .footer-grid p {
   font-size:14px;
   max-width:420px;
   margin-top:22px;
 }
+
 .footer-links {
   display:flex;
   gap:22px;
   flex-wrap:wrap;
   font-size:13px;
 }
+
 .footer-links a:hover {color:var(--gold)}
+
 .footer-bottom {
   padding-top:23px;
   border-top:1px solid rgba(255,255,255,.15);
@@ -571,6 +655,7 @@ footer .logo {color:white}
   .topbar-inner span:last-child {display:none}
   .header-inner {min-height:72px}
   .menu-toggle {display:block}
+
   nav {
     display:none;
     position:absolute;
@@ -583,10 +668,12 @@ footer .logo {color:white}
     align-items:stretch;
     box-shadow:0 12px 24px rgba(0,0,0,.1);
   }
+
   nav.open {display:flex}
   .hero {padding:48px 0}
   .hero-title {font-size:clamp(34px,8vw,53px)}
   .slide {height:440px}
+
   .slide-caption {
     left:20px;
     right:20px;
@@ -594,15 +681,23 @@ footer .logo {color:white}
     padding:20px;
     font-size:20px;
   }
+
   .slider-arrow {
     width:39px;
     height:39px;
     font-size:20px;
   }
-  .about-grid,.vision-grid,
-  .sustainability-grid,.locations-grid,
-  .contact-grid {grid-template-columns:1fr}
+
+  .about-grid,
+  .vision-grid,
+  .sustainability-grid,
+  .locations-grid,
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+
   .about-photo {height:360px}
+
   .banner-inner {
     flex-direction:column;
     align-items:flex-start;
@@ -616,12 +711,14 @@ footer .logo {color:white}
   .slide-caption {font-size:17px}
   .footer-grid {flex-direction:column}
   .contact-form {padding:24px}
+
   .service-item summary {
     min-height:68px;
     padding:16px;
   }
+
   .service-description {
-    padding:0 20px 20px 58px;
+    padding:0 16px 20px 16px;
   }
 }
 
@@ -645,16 +742,18 @@ footer .logo {color:white}
   </div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- HEADER -->
 <header>
   <div class="container header-inner">
 
-    <a href="#top" class="logo">
+    <a href="#top" class="logo" aria-label="VICWIDE Home">
       VIC<span>WIDE</span>
       <small>Facility Management</small>
     </a>
 
-    <button class="menu-toggle" id="menuToggle"
+    <button
+      class="menu-toggle"
+      id="menuToggle"
       aria-label="Toggle navigation"
       aria-controls="mainNav"
       aria-expanded="false">☰</button>
@@ -664,6 +763,7 @@ footer .logo {color:white}
       <a href="#services">Our Services</a>
       <a href="#sustainability">Sustainability</a>
       <a href="#areas">Locations</a>
+
       <a href="#contact" class="btn">
         Get a Quote ↗
       </a>
@@ -674,66 +774,94 @@ footer .logo {color:white}
 
 <main>
 
-<!-- HOME / SLIDER -->
+<!-- HERO AND THREE IMAGE SLIDER -->
 <section class="hero">
   <div class="container">
 
-    <div class="eyebrow">Integrated Facilities Management</div>
+    <div class="eyebrow">
+      Integrated Facilities Management
+    </div>
 
     <h1 class="hero-title">
       One team.
       <span>Every part of your building.</span>
     </h1>
 
-    <div class="slider" id="heroSlider"
+    <div
+      class="slider"
+      id="heroSlider"
       tabindex="0"
       aria-label="Facility management image slider">
 
       <div class="slides" id="slides">
 
+        <!-- SLIDE ONE -->
         <div class="slide">
-          <img src="assets/hero-slide-1.jpg"
+          <img
+            src="assets/hero-slide-1.png"
             alt="Modern commercial facility"
             fetchpriority="high">
+
           <div class="slide-caption">
-            Your building.<br>Our responsibility.
+            Your building.<br>
+            Our responsibility.
           </div>
         </div>
 
+        <!-- SLIDE TWO -->
         <div class="slide">
-          <img src="assets/hero-slide-2.jpg"
+          <img
+            src="assets/hero-slide-2.png"
             alt="Clean corporate office lobby"
             loading="lazy">
+
           <div class="slide-caption">
-            Clean spaces.<br>Better experiences.
+            Clean spaces.<br>
+            Better experiences.
           </div>
         </div>
 
+        <!-- SLIDE THREE -->
         <div class="slide">
-          <img src="assets/hero-slide-3.jpg"
+          <img
+            src="assets/hero-slide-3.png"
             alt="Well-maintained commercial property"
             loading="lazy">
+
           <div class="slide-caption">
-            Well-managed spaces.<br>Lasting impressions.
+            Well-managed spaces.<br>
+            Lasting impressions.
           </div>
         </div>
 
       </div>
 
-      <button id="previousSlide"
+      <!-- SLIDER ARROWS -->
+      <button
+        id="previousSlide"
         class="slider-arrow slider-prev"
         aria-label="Previous slide">&#10094;</button>
 
-      <button id="nextSlide"
+      <button
+        id="nextSlide"
         class="slider-arrow slider-next"
         aria-label="Next slide">&#10095;</button>
 
+      <!-- SLIDER DOTS -->
       <div class="slider-dots">
-        <button class="slider-dot active" data-slide="0"
+        <button
+          class="slider-dot active"
+          data-slide="0"
           aria-label="Show slide 1"></button>
-        <button class="slider-dot" data-slide="1"
+
+        <button
+          class="slider-dot"
+          data-slide="1"
           aria-label="Show slide 2"></button>
-        <button class="slider-dot" data-slide="2"
+
+        <button
+          class="slider-dot"
+          data-slide="2"
           aria-label="Show slide 3"></button>
       </div>
 
@@ -741,18 +869,20 @@ footer .logo {color:white}
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT US -->
 <section id="about">
   <div class="container about-grid">
 
     <div class="about-photo">
       <div class="about-badge">
-        Your building.<br>Our responsibility.
+        Your building.<br>
+        Our responsibility.
       </div>
     </div>
 
     <div class="about-content">
       <div class="eyebrow">Who We Are</div>
+
       <h2 class="section-title">
         Facilities management that takes the weight off you.
       </h2>
@@ -823,29 +953,30 @@ footer .logo {color:white}
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- OUR SERVICES - NO NUMBERS -->
 <section id="services">
   <div class="container">
 
     <div class="services-intro">
       <div class="eyebrow">Our Expertise</div>
+
       <h2 class="section-title">
         Complete solutions. One seamless experience.
       </h2>
+
       <p class="lead">
-        Explore our 16 facility management services.
+        Explore our facility management services.
         Select a service to view its details.
       </p>
     </div>
 
-    <!-- Cleaning-related services first -->
     <div class="service-list">
 
+      <!-- CLEANING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">01</span>
           <span class="service-name">Cleaning</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Our cleaning services cover routine office and
@@ -854,11 +985,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- HOUSEKEEPING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">02</span>
           <span class="service-name">Housekeeping</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We coordinate housekeeping for accommodation
@@ -867,11 +998,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- STEWARDING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">03</span>
           <span class="service-name">Stewarding</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Kitchen stewarding services support clean,
@@ -880,11 +1011,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- WASTE MANAGEMENT -->
       <details class="service-item">
         <summary>
-          <span class="service-number">04</span>
           <span class="service-name">Waste Management</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Waste collection and handling services support
@@ -893,11 +1024,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- PEST CONTROL -->
       <details class="service-item">
         <summary>
-          <span class="service-number">05</span>
           <span class="service-name">Pest Control</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We help identify and manage pest concerns
@@ -906,11 +1037,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- LANDSCAPING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">06</span>
           <span class="service-name">Landscaping</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We care for gardens, lawns and external grounds
@@ -919,11 +1050,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- ASSET MANAGEMENT -->
       <details class="service-item">
         <summary>
-          <span class="service-number">07</span>
           <span class="service-name">Asset Management</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We manage building assets, equipment and
@@ -932,11 +1063,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- CONCIERGE -->
       <details class="service-item">
         <summary>
-          <span class="service-number">08</span>
           <span class="service-name">Concierge</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           A helpful first point of contact for guests
@@ -945,11 +1076,13 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- MECHANICAL AND ELECTRICAL -->
       <details class="service-item">
         <summary>
-          <span class="service-number">09</span>
-          <span class="service-name">Mechanical and Electrical Systems</span>
-          <span class="service-plus">+</span>
+          <span class="service-name">
+            Mechanical and Electrical Systems
+          </span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Qualified contractors help maintain essential
@@ -958,11 +1091,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- FIRE AND COMPLIANCE -->
       <details class="service-item">
         <summary>
-          <span class="service-number">10</span>
           <span class="service-name">Fire and Compliance</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We coordinate inspection and servicing of
@@ -971,11 +1104,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- ENERGY MANAGEMENT -->
       <details class="service-item">
         <summary>
-          <span class="service-number">11</span>
           <span class="service-name">Energy Management</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We review energy consumption and utilities to
@@ -984,11 +1117,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- SECURITY -->
       <details class="service-item">
         <summary>
-          <span class="service-number">12</span>
           <span class="service-name">Security</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Security professionals help protect your
@@ -997,11 +1130,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- MAINTENANCE -->
       <details class="service-item">
         <summary>
-          <span class="service-number">13</span>
           <span class="service-name">Maintenance</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           Our maintenance team assists with electrical
@@ -1010,11 +1143,11 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- SPACE PLANNING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">14</span>
           <span class="service-name">Space Planning</span>
-          <span class="service-plus">+</span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We help plan practical, comfortable spaces
@@ -1023,11 +1156,13 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- EVENT PLANNING -->
       <details class="service-item">
         <summary>
-          <span class="service-number">15</span>
-          <span class="service-name">Event Planning and Catering</span>
-          <span class="service-plus">+</span>
+          <span class="service-name">
+            Event Planning and Catering
+          </span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We assist with event logistics, venue
@@ -1036,11 +1171,13 @@ footer .logo {color:white}
         </div>
       </details>
 
+      <!-- STATIONERY AND OFFICE SUPPLIES -->
       <details class="service-item">
         <summary>
-          <span class="service-number">16</span>
-          <span class="service-name">Stationery and Office Supplies</span>
-          <span class="service-plus">+</span>
+          <span class="service-name">
+            Stationery and Office Supplies
+          </span>
+          <span class="service-plus" aria-hidden="true">+</span>
         </summary>
         <div class="service-description">
           We support stock control and replenishment
@@ -1053,9 +1190,10 @@ footer .logo {color:white}
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CALL TO ACTION -->
 <section class="banner">
   <div class="container banner-inner">
+
     <div>
       <h2>Less complexity. More confidence.</h2>
       <p>
@@ -1064,9 +1202,11 @@ footer .logo {color:white}
         and we will put together a tailored approach.
       </p>
     </div>
+
     <a href="#contact" class="btn">
       Let's Talk About Your Site ↗
     </a>
+
   </div>
 </section>
 
@@ -1075,11 +1215,14 @@ footer .logo {color:white}
   <div class="container">
 
     <div class="eyebrow">Sustainable Facilities</div>
+
     <h2 class="section-title">
-      Better buildings.<br>A lighter footprint.
+      Better buildings.<br>
+      A lighter footprint.
     </h2>
 
     <div class="sustainability-grid">
+
       <article class="info-card">
         <h3>Environmental Consciousness</h3>
         <p>
@@ -1098,8 +1241,8 @@ footer .logo {color:white}
           so a greener site is also a cheaper one.
         </p>
       </article>
-    </div>
 
+    </div>
   </div>
 </section>
 
@@ -1108,6 +1251,7 @@ footer .logo {color:white}
   <div class="container">
 
     <div class="eyebrow">Our Locations</div>
+
     <h2 class="section-title">
       Local presence. Reliable support.
     </h2>
@@ -1120,6 +1264,7 @@ footer .logo {color:white}
     </p>
 
     <div class="locations-grid">
+
       <article class="location-card">
         <h3>New South Wales</h3>
         <p>
@@ -1135,8 +1280,8 @@ footer .logo {color:white}
           Maddington WA
         </p>
       </article>
-    </div>
 
+    </div>
   </div>
 </section>
 
@@ -1148,7 +1293,8 @@ footer .logo {color:white}
       <div class="eyebrow">Get In Touch</div>
 
       <h2 class="section-title">
-        Let's take care<br>of your space.
+        Let's take care<br>
+        of your space.
       </h2>
 
       <p class="contact-intro">
@@ -1174,6 +1320,7 @@ footer .logo {color:white}
         <strong>Locations</strong>
         <span>Parramatta NSW &amp; Maddington WA</span>
       </div>
+
     </div>
 
     <!-- ENQUIRY FORM -->
@@ -1183,19 +1330,27 @@ footer .logo {color:white}
       <p>Tell us what you need help with.</p>
 
       <div class="form-row">
+
         <label class="field">
           Full Name
-          <input type="text" name="name"
+          <input
+            type="text"
+            name="name"
             placeholder="Your full name"
-            autocomplete="name" required>
+            autocomplete="name"
+            required>
         </label>
 
         <label class="field">
           Email Address
-          <input type="email" name="email"
+          <input
+            type="email"
+            name="email"
             placeholder="you@company.com"
-            autocomplete="email" required>
+            autocomplete="email"
+            required>
         </label>
+
       </div>
 
       <label class="field">
@@ -1224,7 +1379,8 @@ footer .logo {color:white}
 
       <label class="field">
         Your Message
-        <textarea name="message"
+        <textarea
+          name="message"
           placeholder="Tell us about your site, location and requirements..."></textarea>
       </label>
 
@@ -1235,6 +1391,7 @@ footer .logo {color:white}
       <p class="form-note" id="formNote" role="status"></p>
 
     </form>
+
   </div>
 </section>
 
@@ -1245,11 +1402,13 @@ footer .logo {color:white}
   <div class="container">
 
     <div class="footer-grid">
+
       <div>
         <a href="#top" class="logo">
           VIC<span>WIDE</span>
           <small>Facility Management</small>
         </a>
+
         <p>
           One team for every part of your building.
           Integrated services, one accountable partner.
@@ -1263,6 +1422,7 @@ footer .logo {color:white}
         <a href="#areas">Locations</a>
         <a href="#contact">Contact</a>
       </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -1273,26 +1433,37 @@ footer .logo {color:white}
 </footer>
 
 <script>
-/* MOBILE MENU */
+
+/* MOBILE NAVIGATION */
 
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 menuToggle.addEventListener("click", () => {
   const opened = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(opened));
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(opened)
+  );
+
   menuToggle.textContent = opened ? "×" : "☰";
 });
 
 mainNav.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     mainNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     menuToggle.textContent = "☰";
   });
 });
 
-/* SLIDER */
+/* IMAGE SLIDER */
 
 const slidesTrack = document.getElementById("slides");
 const slider = document.getElementById("heroSlider");
@@ -1311,7 +1482,11 @@ function showSlide(index) {
     `translateX(-${currentSlide * 100}%)`;
 
   dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentSlide);
+    dot.classList.toggle(
+      "active",
+      i === currentSlide
+    );
+
     dot.setAttribute(
       "aria-current",
       i === currentSlide ? "true" : "false"
@@ -1326,15 +1501,31 @@ function showSlide(index) {
   });
 }
 
-document.getElementById("previousSlide")
-  .addEventListener("click", () => showSlide(currentSlide - 1));
+/* PREVIOUS SLIDE */
 
-document.getElementById("nextSlide")
-  .addEventListener("click", () => showSlide(currentSlide + 1));
+document
+  .getElementById("previousSlide")
+  .addEventListener("click", () => {
+    showSlide(currentSlide - 1);
+  });
+
+/* NEXT SLIDE */
+
+document
+  .getElementById("nextSlide")
+  .addEventListener("click", () => {
+    showSlide(currentSlide + 1);
+  });
+
+/* SLIDE INDICATORS */
 
 dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => showSlide(index));
+  dot.addEventListener("click", () => {
+    showSlide(index);
+  });
 });
+
+/* KEYBOARD NAVIGATION */
 
 slider.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") {
@@ -1346,26 +1537,38 @@ slider.addEventListener("keydown", event => {
   }
 });
 
-slider.addEventListener("touchstart", event => {
-  touchStartX = event.changedTouches[0].screenX;
-}, {passive:true});
+/* MOBILE TOUCH SWIPE */
 
-slider.addEventListener("touchend", event => {
-  if (touchStartX === null) return;
+slider.addEventListener(
+  "touchstart",
+  event => {
+    touchStartX = event.changedTouches[0].screenX;
+  },
+  {passive:true}
+);
 
-  const distance =
-    event.changedTouches[0].screenX - touchStartX;
+slider.addEventListener(
+  "touchend",
+  event => {
+    if (touchStartX === null) return;
 
-  if (Math.abs(distance) > 45) {
-    showSlide(currentSlide + (distance < 0 ? 1 : -1));
-  }
+    const distance =
+      event.changedTouches[0].screenX - touchStartX;
 
-  touchStartX = null;
-}, {passive:true});
+    if (Math.abs(distance) > 45) {
+      showSlide(
+        currentSlide + (distance < 0 ? 1 : -1)
+      );
+    }
+
+    touchStartX = null;
+  },
+  {passive:true}
+);
 
 showSlide(0);
 
-/* EXPANDABLE SERVICES: OPEN ONE AT A TIME */
+/* EXPANDABLE SERVICES */
 
 const serviceItems = document.querySelectorAll(".service-item");
 
@@ -1373,13 +1576,15 @@ serviceItems.forEach(item => {
   item.addEventListener("toggle", () => {
     if (item.open) {
       serviceItems.forEach(other => {
-        if (other !== item) other.open = false;
+        if (other !== item) {
+          other.open = false;
+        }
       });
     }
   });
 });
 
-/* CONTACT FORM */
+/* ENQUIRY FORM */
 
 const enquiryForm = document.getElementById("enquiryForm");
 
@@ -1409,6 +1614,7 @@ enquiryForm.addEventListener("submit", event => {
     "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
 });
+
 </script>
 
 </body>
