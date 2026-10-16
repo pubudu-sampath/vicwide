@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#091f34">
-<meta name="description" content="VICWIDE Facility Management provides professional cleaning, housekeeping, maintenance, security, landscaping and integrated facility services across NSW and WA.">
+<meta name="description" content="VICWIDE Facility Management provides cleaning, housekeeping, maintenance, security, landscaping and integrated facility services across NSW and WA.">
 <title>VICWIDE | Facility Management</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -374,7 +375,7 @@ nav a:not(.btn):hover {color:#bb8310}
   margin-bottom:15px;
 }
 
-/* SERVICES - WITHOUT NUMBERS */
+/* SERVICES */
 
 .services-intro {
   max-width:760px;
@@ -640,7 +641,7 @@ footer .logo {color:white}
   font-size:13px;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 
 @media(max-width:1000px) {
   .about-grid {gap:35px}
@@ -762,10 +763,7 @@ footer .logo {color:white}
       <a href="#services">Our Services</a>
       <a href="#sustainability">Sustainability</a>
       <a href="#areas">Locations</a>
-
-      <a href="#contact" class="btn">
-        Get a Quote ↗
-      </a>
+      <a href="#contact" class="btn">Get a Quote ↗</a>
     </nav>
 
   </div>
@@ -773,7 +771,7 @@ footer .logo {color:white}
 
 <main>
 
-<!-- HERO AND THREE IMAGE SLIDER -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
 
@@ -794,39 +792,33 @@ footer .logo {color:white}
 
       <div class="slides" id="slides">
 
-        <!-- SLIDE ONE -->
         <div class="slide">
           <img
             src="assets/hero-slide-1.png"
             alt="Modern commercial facility"
             fetchpriority="high">
-
           <div class="slide-caption">
             Your building.<br>
             Our responsibility.
           </div>
         </div>
 
-        <!-- SLIDE TWO -->
         <div class="slide">
           <img
             src="assets/hero-slide-2.png"
             alt="Clean corporate office lobby"
             loading="lazy">
-
           <div class="slide-caption">
             Clean spaces.<br>
             Better experiences.
           </div>
         </div>
 
-        <!-- SLIDE THREE -->
         <div class="slide">
           <img
             src="assets/hero-slide-3.png"
             alt="Well-maintained commercial property"
             loading="lazy">
-
           <div class="slide-caption">
             Well-managed spaces.<br>
             Lasting impressions.
@@ -835,7 +827,6 @@ footer .logo {color:white}
 
       </div>
 
-      <!-- SLIDER ARROWS -->
       <button
         id="previousSlide"
         class="slider-arrow slider-prev"
@@ -846,20 +837,14 @@ footer .logo {color:white}
         class="slider-arrow slider-next"
         aria-label="Next slide">&#10095;</button>
 
-      <!-- SLIDER DOTS -->
       <div class="slider-dots">
-        <button
-          class="slider-dot active"
+        <button class="slider-dot active"
           data-slide="0"
           aria-label="Show slide 1"></button>
-
-        <button
-          class="slider-dot"
+        <button class="slider-dot"
           data-slide="1"
           aria-label="Show slide 2"></button>
-
-        <button
-          class="slider-dot"
+        <button class="slider-dot"
           data-slide="2"
           aria-label="Show slide 3"></button>
       </div>
@@ -952,7 +937,7 @@ footer .logo {color:white}
   </div>
 </section>
 
-<!-- OUR SERVICES - NO NUMBERS -->
+<!-- SERVICES -->
 <section id="services">
   <div class="container">
 
@@ -1075,7 +1060,7 @@ footer .logo {color:white}
         </div>
       </details>
 
-      <!-- MECHANICAL AND ELECTRICAL -->
+      <!-- MECHANICAL AND ELECTRICAL SYSTEMS -->
       <details class="service-item">
         <summary>
           <span class="service-name">
@@ -1155,7 +1140,7 @@ footer .logo {color:white}
         </div>
       </details>
 
-      <!-- EVENT PLANNING -->
+      <!-- EVENT PLANNING AND CATERING -->
       <details class="service-item">
         <summary>
           <span class="service-name">
@@ -1284,7 +1269,7 @@ footer .logo {color:white}
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT US -->
 <section class="contact" id="contact">
   <div class="container contact-grid">
 
@@ -1583,7 +1568,7 @@ serviceItems.forEach(item => {
   });
 });
 
-/* ENQUIRY FORM */
+/* ENQUIRY FORM WITH TO AND CC */
 
 const enquiryForm = document.getElementById("enquiryForm");
 
@@ -1597,21 +1582,44 @@ enquiryForm.addEventListener("submit", event => {
   const service = data.get("service");
   const message = data.get("message");
 
-  const subject = "Quote request: " + service;
+  /* EMAIL RECIPIENTS */
+
+  const recipient =
+    "vicwidefacilitymanagement@gmail.com";
+
+  const cc =
+    "sampathwit@gmail.com";
+
+  /* EMAIL SUBJECT */
+
+  const subject =
+    "VICWIDE Quote Request: " + service;
+
+  /* EMAIL BODY */
 
   const body =
+    "VICWIDE FACILITY MANAGEMENT\n" +
+    "NEW WEBSITE ENQUIRY\n\n" +
     "Name: " + name + "\n" +
     "Email: " + email + "\n" +
-    "Service: " + service + "\n\n" +
-    "Message:\n" + message;
+    "Service Required: " + service + "\n\n" +
+    "Message:\n" + message + "\n\n" +
+    "Submitted from: VICWIDE Website";
+
+  /* SHOW INFORMATION TO THE VISITOR */
 
   document.getElementById("formNote").textContent =
-    "Opening your email application to send the enquiry.";
+    "Opening your email application. Please click Send to complete your enquiry.";
 
-  window.location.href =
-    "mailto:info@vicwide.com" +
-    "?subject=" + encodeURIComponent(subject) +
+  /* OPEN MAIL APPLICATION WITH TO AND CC */
+
+  const mailtoURL =
+    "mailto:" + recipient +
+    "?cc=" + encodeURIComponent(cc) +
+    "&subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
+
+  window.location.href = mailtoURL;
 });
 
 </script>
