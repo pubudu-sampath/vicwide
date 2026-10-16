@@ -2,1863 +2,1209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#091f34">
-  <meta name="description" content="VICWIDE Facility Management — commercial cleaning, maintenance, compliance, landscaping, security and integrated facility services.">
-  <title>VICWIDE | Facility Management</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #091f34;
-      --navy-light: #102f49;
-      --gold: #f5ba37;
-      --gold-hover: #ffce65;
-      --text: #122c40;
-      --muted: #526878;
-      --surface: #f3f7f9;
-      --line: #e0e8ec;
-      --green: #488f79;
-      --max: 1240px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 105px;
-    }
-
-    body {
-      margin: 0;
-      background: white;
-      color: var(--muted);
-      font: 16px/1.75 "DM Sans", sans-serif;
-    }
-
-    h1, h2, h3 {
-      color: var(--text);
-      font-family: "Manrope", sans-serif;
-      line-height: 1.2;
-      letter-spacing: -.045em;
-      margin: 0;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max);
-      padding: 0 34px;
-      margin: auto;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: 12px;
-      font-weight: 800;
-      color: #b58012;
-      margin-bottom: 18px;
-    }
-
-    .section-title {
-      font-size: clamp(34px, 4vw, 54px);
-      font-weight: 800;
-      margin-bottom: 23px;
-    }
-
-    .lead {
-      font-size: 17px;
-      line-height: 1.85;
-      max-width: 720px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      padding: 15px 24px;
-      background: var(--gold);
-      color: var(--navy);
-      border: 0;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: .25s;
-    }
-
-    .btn:hover {
-      background: var(--gold-hover);
-      transform: translateY(-2px);
-    }
-
-    /* TOP BAR */
-
-    .topbar {
-      background: #071a2b;
-      color: #d5e0e8;
-      padding: 9px 0;
-      font-size: 12px;
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .topbar strong {
-      color: var(--gold);
-    }
-
-    /* HEADER AND NAVIGATION */
-
-    header {
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(9,31,52,.06);
-    }
-
-    .header-inner {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      font-family: "Manrope", sans-serif;
-      font-size: 27px;
-      font-weight: 800;
-      letter-spacing: -.09em;
-      line-height: 1;
-      color: var(--navy);
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #d99b12;
-    }
-
-    .logo small {
-      display: block;
-      font-size: 10px;
-      letter-spacing: .2em;
-      color: #557286;
-      margin-top: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    nav a:not(.btn) {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    nav a:not(.btn):hover {
-      color: #bb8310;
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: none;
-      font-size: 28px;
-      color: var(--navy);
-    }
-
-    /* HERO SECTION */
-
-    .hero {
-      background: linear-gradient(180deg, #f6f9fb, #fff);
-      padding: 68px 0 90px;
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      margin-bottom: 36px;
-    }
-
-    .hero-title {
-      font-size: clamp(40px, 5.6vw, 76px);
-      font-weight: 800;
-      letter-spacing: -.07em;
-    }
-
-    .hero-title span {
-      color: #6b8293;
-    }
-
-    /* THREE IMAGE SLIDER */
-
-    .slider {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(9,31,52,.13);
-      outline-offset: 4px;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform .65s cubic-bezier(.22,.61,.36,1);
-    }
-
-    .slide {
-      position: relative;
-      min-width: 100%;
-      height: clamp(360px, 52vw, 650px);
-      overflow: hidden;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(8,25,38,.2),
-        transparent 55%
-      );
-      pointer-events: none;
-    }
-
-    .slide-caption {
-      position: absolute;
-      bottom: 48px;
-      left: 45px;
-      z-index: 2;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 25px 34px;
-      border-radius: 10px;
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(18px, 2.2vw, 30px);
-      line-height: 1.32;
-      font-weight: 800;
-      max-width: 540px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.09);
-    }
-
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.93);
-      border: 0;
-      border-radius: 50%;
-      font-size: 25px;
-      color: var(--navy);
-      box-shadow: 0 4px 14px rgba(0,0,0,.12);
-      transition: .2s;
-    }
-
-    .slider-arrow:hover {
-      background: var(--gold);
-    }
-
-    .slider-prev {
-      left: 18px;
-    }
-
-    .slider-next {
-      right: 18px;
-    }
-
-    .slider-dots {
-      position: absolute;
-      z-index: 5;
-      bottom: 17px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 9px;
-    }
-
-    .slider-dot {
-      height: 9px;
-      width: 9px;
-      border: 0;
-      border-radius: 30px;
-      background: rgba(255,255,255,.6);
-      padding: 0;
-      transition: .3s;
-    }
-
-    .slider-dot.active {
-      width: 29px;
-      background: var(--gold);
-    }
-
-    /* ABOUT US */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .about-photo {
-      height: 490px;
-      background:
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1100&q=85")
-        center/cover;
-      border-radius: 12px;
-      position: relative;
-    }
-
-    .about-badge {
-      position: absolute;
-      left: 25px;
-      bottom: 25px;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 20px;
-      max-width: 260px;
-      border-radius: 7px;
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .about-content p {
-      margin-bottom: 20px;
-    }
-
-    .benefits {
-      display: grid;
-      gap: 15px;
-      margin-top: 25px;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .benefits div::before {
-      content: "✓";
-      background: #e4f2ea;
-      color: var(--green);
-      border-radius: 50%;
-      padding: 2px 7px;
-      margin-right: 12px;
-    }
-
-    /* VISION AND MISSION */
-
-    .vision {
-      background: var(--surface);
-    }
-
-    .vision-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .vision-card {
-      padding: 40px;
-      background: white;
-      border: 1px solid var(--line);
-      border-top: 4px solid var(--gold);
-      border-radius: 8px;
-    }
-
-    .vision-card:nth-child(2) {
-      border-top-color: var(--green);
-    }
-
-    .vision-card h3 {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
-    /* OUR SERVICES */
-
-    .section-intro {
-      max-width: 800px;
-      margin-bottom: 36px;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .filter {
-      padding: 10px 18px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: #f4f7f8;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .filter.active,
-    .filter:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: white;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .service-card {
-      position: relative;
-      padding: 28px;
-      min-height: 248px;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      background: white;
-      transition: .25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      box-shadow: 0 14px 35px rgba(9,31,52,.09);
-    }
-
-    .service-card[hidden] {
-      display: none;
-    }
-
-    .service-number {
-      color: #b28a33;
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 24px;
-    }
-
-    .service-card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    /* CALL TO ACTION */
-
-    .banner {
-      background: var(--navy);
-      color: white;
-      padding: 70px 0;
-    }
-
-    .banner-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .banner h2 {
-      color: white;
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .banner p {
-      max-width: 620px;
-    }
-
-    /* SUSTAINABILITY */
-
-    .sustainability {
-      background: var(--surface);
-    }
-
-    .sustainability-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .info-card {
-      background: white;
-      padding: 35px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-    }
-
-    .info-card h3 {
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
-
-    /* LOCATIONS */
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 34px;
-    }
-
-    .location-card {
-      background: var(--surface);
-      padding: 34px;
-      border-radius: 9px;
-      border: 1px solid var(--line);
-    }
-
-    .location-card h3 {
-      font-size: 23px;
-      margin-bottom: 14px;
-    }
-
-    /* CONTACT US */
-
-    .contact {
-      background: var(--navy);
-      color: #cbd9e3;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 70px;
-    }
-
-    .contact h2 {
-      color: white;
-    }
-
-    .contact-info {
-      border-top: 1px solid rgba(255,255,255,.16);
-      padding: 20px 0;
-    }
-
-    .contact-info strong {
-      display: block;
-      color: var(--gold);
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: .12em;
-      margin-bottom: 5px;
-    }
-
-    .contact-info a:hover {
-      color: var(--gold);
-    }
-
-    .contact-form {
-      padding: 36px;
-      background: white;
-      color: var(--text);
-      border-radius: 10px;
-    }
-
-    .contact-form h3 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .contact-form > p {
-      margin-bottom: 24px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      padding: 12px;
-      border: 1px solid #dce5e9;
-      border-radius: 6px;
-      color: var(--text);
-      background: white;
-      width: 100%;
-    }
-
-    .field textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    #formNote {
-      font-size: 13px;
-      margin-top: 12px;
-      color: var(--green);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #071a2b;
-      color: #b9c8d3;
-      padding: 55px 0 25px;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 30px;
-      padding-bottom: 40px;
-    }
-
-    footer .logo {
-      color: white;
-    }
-
-    .footer-grid p {
-      max-width: 400px;
-      margin-top: 23px;
-      font-size: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 13px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.15);
-      padding-top: 24px;
-      font-size: 13px;
-    }
-
-    /* TABLET RESPONSIVENESS */
-
-    @media (max-width: 1000px) {
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
-        gap: 35px;
-      }
-
-      .contact-grid {
-        gap: 35px;
-      }
-    }
-
-    /* MOBILE RESPONSIVENESS */
-
-    @media (max-width: 800px) {
-      section {
-        padding: 68px 0;
-      }
-
-      .container {
-        padding: 0 20px;
-      }
-
-      .topbar-inner span:last-child {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding: 24px;
-        background: white;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 21px;
-        box-shadow: 0 14px 22px rgba(0,0,0,.1);
-      }
-
-      nav.open {
-        display: flex;
-      }
-
-      .hero {
-        padding: 55px 0;
-      }
-
-      .hero-title {
-        font-size: clamp(35px, 8vw, 55px);
-      }
-
-      .slide {
-        height: 460px;
-      }
-
-      .slide-caption {
-        left: 20px;
-        bottom: 55px;
-        right: 20px;
-        padding: 19px;
-        font-size: 20px;
-        max-width: 370px;
-      }
-
-      .slider-arrow {
-        width: 39px;
-        height: 39px;
-        font-size: 21px;
-      }
-
-      .about-grid,
-      .vision-grid,
-      .sustainability-grid,
-      .locations-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        height: 350px;
-      }
-
-      .banner-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 530px) {
-      .service-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .slide {
-        height: 380px;
-      }
-
-      .slide-caption {
-        font-size: 17px;
-        bottom: 49px;
-      }
-
-      .footer-grid {
-        flex-direction: column;
-      }
-
-      .contact-form {
-        padding: 23px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .slides {
-        transition: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091f34">
+<meta name="description" content="VICWIDE Facility Management provides cleaning, maintenance, security, landscaping, housekeeping, waste management and pest control services across New South Wales and Western Australia.">
+<title>VICWIDE | Facility Management</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#091f34;
+  --gold:#f5ba37;
+  --ink:#122c40;
+  --body:#526878;
+  --cloud:#f3f7f9;
+  --line:#dfe8ec;
+  --green:#488f79;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:100px}
+body {
+  margin:0;
+  color:var(--body);
+  font:16px/1.75 'DM Sans',sans-serif;
+}
+h1,h2,h3 {
+  font-family:'Manrope',sans-serif;
+  color:var(--ink);
+  line-height:1.18;
+  letter-spacing:-.045em;
+  margin:0;
+}
+p {margin:0}
+a {text-decoration:none;color:inherit}
+button,input,select,textarea {font:inherit}
+button {cursor:pointer}
+img {display:block;max-width:100%}
+.container {max-width:1240px;padding:0 34px;margin:auto}
+.section {padding:95px 0}
+.eyebrow {
+  color:#b68114;
+  text-transform:uppercase;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  margin-bottom:15px;
+}
+.section-title {
+  font-size:clamp(34px,4vw,54px);
+  margin-bottom:24px;
+  font-weight:800;
+}
+.lead {font-size:17px;line-height:1.85}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:15px 24px;
+  border:0;
+  border-radius:8px;
+  background:var(--gold);
+  color:var(--navy);
+  font-size:14px;
+  font-weight:800;
+  transition:.25s;
+}
+.btn:hover {background:#ffcf69;transform:translateY(-2px)}
+a:focus-visible,button:focus-visible,summary:focus-visible,
+input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* TOP INFORMATION BAR */
+.topbar {
+  background:#071a2b;
+  color:#d6e1e8;
+  padding:10px 0;
+  font-size:12px;
+}
+.topbar-inner {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+}
+.topbar strong {color:var(--gold)}
+
+/* HEADER */
+header {
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 4px 20px rgba(9,31,52,.07);
+}
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:84px;
+  gap:20px;
+}
+.logo {
+  color:var(--navy);
+  font:800 29px/1 'Manrope',sans-serif;
+  letter-spacing:-.085em;
+  white-space:nowrap;
+}
+.logo span {color:#d99b12}
+.logo small {
+  display:block;
+  font-size:10px;
+  letter-spacing:.19em;
+  margin-top:10px;
+  color:#59778c;
+  font-weight:800;
+  text-transform:uppercase;
+}
+nav {display:flex;align-items:center;gap:30px}
+nav a:not(.btn) {
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink);
+}
+nav a:hover {color:#b78921}
+.menu-toggle {
+  display:none;
+  border:0;
+  background:none;
+  color:var(--navy);
+  font-size:27px;
+}
+
+/* HOMEPAGE */
+.hero {
+  background:linear-gradient(180deg,#f6f9fb,#fff);
+  padding:70px 0 85px;
+}
+.hero-heading {
+  font-size:clamp(40px,5.7vw,76px);
+  font-weight:800;
+  letter-spacing:-.065em;
+  margin:20px 0 35px;
+}
+.hero-heading span {color:#6b8293}
+
+/* SLIDER */
+.slider {
+  position:relative;
+  overflow:hidden;
+  border-radius:17px;
+  background:#e2e8ed;
+  box-shadow:0 23px 55px rgba(9,31,52,.14);
+  touch-action:pan-y;
+}
+.slides {
+  display:flex;
+  transition:transform .65s ease;
+}
+.slide {
+  min-width:100%;
+  position:relative;
+  height:clamp(360px,52vw,650px);
+}
+.slide img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.slide::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(9,31,52,.15),transparent 50%);
+  pointer-events:none;
+}
+.slide-caption {
+  position:absolute;
+  z-index:2;
+  left:44px;
+  bottom:45px;
+  background:var(--gold);
+  color:var(--navy);
+  border-radius:10px;
+  padding:25px 34px;
+  font:800 clamp(19px,2.2vw,30px)/1.35 'Manrope',sans-serif;
+  max-width:550px;
+}
+.slider-arrow {
+  position:absolute;
+  z-index:5;
+  top:50%;
+  transform:translateY(-50%);
+  height:48px;
+  width:48px;
+  border-radius:50%;
+  border:0;
+  background:rgba(255,255,255,.92);
+  color:var(--navy);
+  font-size:25px;
+  display:grid;
+  place-items:center;
+  transition:.2s;
+}
+.slider-arrow:hover {background:var(--gold)}
+.slider-prev {left:16px}
+.slider-next {right:16px}
+.slider-dots {
+  position:absolute;
+  z-index:5;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:9px;
+}
+.slider-dot {
+  width:10px;
+  height:10px;
+  border:0;
+  border-radius:20px;
+  background:rgba(255,255,255,.65);
+  padding:0;
+}
+.slider-dot.active {
+  width:30px;
+  background:var(--gold);
+}
+
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+.about-photo {
+  position:relative;
+  height:490px;
+  border-radius:12px;
+  background:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1100&q=85") center/cover;
+}
+.about-badge {
+  position:absolute;
+  left:25px;
+  bottom:25px;
+  background:var(--gold);
+  border-radius:7px;
+  color:var(--navy);
+  padding:22px;
+  font:800 18px/1.4 'Manrope',sans-serif;
+}
+.about-content p {margin-bottom:20px}
+.benefits {display:grid;gap:13px;margin-top:25px}
+.benefits div {color:var(--ink);font-size:14px;font-weight:700}
+.benefits div::before {
+  content:"✓";
+  color:var(--green);
+  background:#e4f2ea;
+  padding:2px 7px;
+  border-radius:50%;
+  margin-right:12px;
+}
+
+/* VISION AND MISSION */
+.vision {background:var(--cloud)}
+.vision-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.vision-card {
+  background:white;
+  border:1px solid var(--line);
+  border-top:4px solid var(--gold);
+  padding:38px;
+  border-radius:9px;
+}
+.vision-card:nth-child(2) {border-top-color:var(--green)}
+.vision-card h3 {font-size:24px;margin-bottom:15px}
+
+/* SERVICES: COMPACT ACCORDION */
+.services {background:#fff}
+.services-intro {max-width:750px;margin-bottom:38px}
+.service-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:14px 20px;
+}
+.service-item {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+}
+.service-item:hover {border-color:#e0b94e}
+.service-item[open] {
+  border-color:#dbad35;
+  box-shadow:0 8px 26px rgba(9,31,52,.07);
+}
+.service-item summary {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  list-style:none;
+  cursor:pointer;
+  min-height:82px;
+  padding:20px 23px;
+}
+.service-item summary::-webkit-details-marker {display:none}
+.service-item summary::marker {content:""}
+.service-number {
+  color:#b38017;
+  font-weight:800;
+  font-size:12px;
+  min-width:25px;
+}
+.service-name {
+  font:800 16px/1.45 'Manrope',sans-serif;
+  color:var(--ink);
+  flex:1;
+}
+.service-plus {
+  height:30px;
+  width:30px;
+  background:#f1f5f7;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--ink);
+  font-size:23px;
+  line-height:1;
+  transition:transform .2s;
+}
+.service-item[open] .service-plus {
+  transform:rotate(45deg);
+  background:#fff3d2;
+}
+.service-description {
+  padding:0 25px 24px 64px;
+  font-size:14px;
+  line-height:1.85;
+}
+
+/* SECONDARY CALL TO ACTION */
+.banner {
+  background:var(--navy);
+  color:white;
+  padding:65px 0;
+}
+.banner-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:36px;
+}
+.banner h2 {
+  color:white;
+  font-size:clamp(28px,3.3vw,42px);
+  margin-bottom:13px;
+}
+.banner p {max-width:630px}
+
+/* SUSTAINABILITY */
+.sustainability {background:var(--cloud)}
+.sustainability-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.info-card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:35px;
+}
+.info-card h3 {font-size:22px;margin-bottom:15px}
+
+/* LOCATIONS */
+.locations-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:34px;
+}
+.location-card {
+  background:var(--cloud);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:35px;
+}
+.location-card h3 {font-size:23px;margin-bottom:13px}
+
+/* CONTACT */
+.contact {
+  background:var(--navy);
+  color:#cbd9e3;
+}
+.contact-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:70px;
+}
+.contact h2 {color:white}
+.contact-intro {margin-bottom:32px}
+.contact-info {
+  border-top:1px solid rgba(255,255,255,.16);
+  padding:20px 0;
+}
+.contact-info strong {
+  display:block;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:12px;
+  margin-bottom:5px;
+}
+.contact-info a:hover {color:var(--gold)}
+.contact-form {
+  background:white;
+  padding:36px;
+  border-radius:10px;
+  color:var(--ink);
+}
+.contact-form h3 {font-size:26px;margin-bottom:10px}
+.contact-form > p {font-size:14px;margin-bottom:23px}
+.form-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.field {
+  display:flex;
+  flex-direction:column;
+  font-size:13px;
+  font-weight:700;
+  gap:7px;
+  margin-bottom:16px;
+}
+.field input,.field select,.field textarea {
+  padding:12px;
+  width:100%;
+  border:1px solid #dce5e9;
+  border-radius:6px;
+  color:var(--ink);
+  background:white;
+}
+.field textarea {min-height:120px;resize:vertical}
+.form-note {font-size:13px;color:var(--green);margin-top:12px}
+
+/* FOOTER */
+footer {
+  background:#071a2b;
+  color:#b9c8d3;
+  padding:50px 0 25px;
+}
+footer .logo {color:white}
+.footer-grid {
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  gap:30px;
+  padding-bottom:35px;
+}
+.footer-grid p {font-size:14px;max-width:420px;margin-top:22px}
+.footer-links {display:flex;gap:22px;flex-wrap:wrap;font-size:13px}
+.footer-links a:hover {color:var(--gold)}
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,.15);
+  padding-top:23px;
+  font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px) {
+  nav {gap:16px}
+  .about-grid {gap:35px}
+  .contact-grid {gap:35px}
+}
+@media(max-width:800px) {
+  .container {padding:0 20px}
+  .section {padding:65px 0}
+  .topbar-inner span:last-child {display:none}
+  .header-inner {min-height:72px}
+  .menu-toggle {display:block}
+  nav {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:white;
+    padding:24px;
+    flex-direction:column;
+    align-items:stretch;
+    box-shadow:0 12px 24px rgba(0,0,0,.1);
+  }
+  nav.open {display:flex}
+  .hero {padding:48px 0}
+  .hero-heading {font-size:clamp(34px,8vw,53px)}
+  .slide {height:440px}
+  .slide-caption {
+    left:20px;
+    bottom:55px;
+    padding:20px;
+    font-size:20px;
+  }
+  .slider-arrow {height:37px;width:37px;font-size:20px}
+  .about-grid,
+  .vision-grid,
+  .sustainability-grid,
+  .locations-grid,
+  .contact-grid {grid-template-columns:1fr}
+  .about-photo {height:360px}
+  .banner-inner {flex-direction:column;align-items:flex-start}
+}
+@media(max-width:620px) {
+  .service-list {grid-template-columns:1fr}
+  .form-row {grid-template-columns:1fr}
+  .slide {height:370px}
+  .slide-caption {font-size:17px}
+  .footer-grid {flex-direction:column}
+  .contact-form {padding:24px}
+  .service-item summary {min-height:68px;padding:16px}
+  .service-description {padding:0 20px 20px 58px}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  .slides {transition:none}
+}
+</style>
 </head>
 
 <body id="top">
 
-  <!-- TOP BAR -->
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>
+      <strong>AUSTRALIAN FACILITY MANAGEMENT</strong>
+      &nbsp; | &nbsp; One accountable partner, complete peace of mind.
+    </span>
+    <span>Serving New South Wales &amp; Western Australia</span>
+  </div>
+</div>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>
-        <strong>AUSTRALIAN FACILITY MANAGEMENT</strong>
-        &nbsp; | &nbsp; One accountable partner, complete peace of mind.
-      </span>
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="VICWIDE Home">
+      VIC<span>WIDE</span>
+      <small>Facility Management</small>
+    </a>
 
-      <span>
-        Serving New South Wales &amp; Western Australia
-      </span>
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation"
+      aria-controls="mainNav"
+      aria-expanded="false">☰</button>
+
+    <nav id="mainNav">
+      <a href="#about">About Us</a>
+      <a href="#services">Our Services</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#areas">Locations</a>
+      <a href="#contact" class="btn">
+        Get a Quote <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HOMEPAGE -->
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">Integrated Facilities Management</div>
+
+    <h1 class="hero-heading">
+      One team.
+      <span>Every part of your building.</span>
+    </h1>
+
+    <div class="slider" id="heroSlider"
+      tabindex="0"
+      aria-label="Facility management image slider">
+
+      <div class="slides" id="slides">
+
+        <!-- SLIDE 1 -->
+        <div class="slide">
+          <img src="assets/hero-slide-1.png"
+            alt="Modern commercial building"
+            fetchpriority="high">
+          <div class="slide-caption">
+            Your building.<br>Our responsibility.
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+          <img src="assets/hero-slide-2.png"
+            alt="Clean corporate office lobby"
+            loading="lazy">
+          <div class="slide-caption">
+            Clean spaces.<br>Better experiences.
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+          <img src="assets/hero-slide-3.png"
+            alt="Well-managed commercial property"
+            loading="lazy">
+          <div class="slide-caption">
+            Well-managed spaces.<br>Lasting impressions.
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-arrow slider-prev"
+        id="previousSlide" aria-label="Previous slide">&#10094;</button>
+
+      <button class="slider-arrow slider-next"
+        id="nextSlide" aria-label="Next slide">&#10095;</button>
+
+      <div class="slider-dots">
+        <button class="slider-dot active" data-slide="0"
+          aria-label="Show first slide"></button>
+        <button class="slider-dot" data-slide="1"
+          aria-label="Show second slide"></button>
+        <button class="slider-dot" data-slide="2"
+          aria-label="Show third slide"></button>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- HEADER -->
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
 
-  <header>
-    <div class="container header-inner">
+    <div class="about-photo">
+      <div class="about-badge">
+        Your building.<br>Our responsibility.
+      </div>
+    </div>
 
-      <a href="#top" class="logo" aria-label="VICWIDE Home">
-        VIC<span>WIDE</span>
-        <small>Facility Management</small>
-      </a>
+    <div class="about-content">
+      <div class="eyebrow">Who We Are</div>
+      <h2 class="section-title">
+        Facilities management that takes the weight off you.
+      </h2>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="mainNav">
-        ☰
+      <p>
+        VICWIDE Facility Management looks after cleaning,
+        maintenance, security, grounds and more under a
+        single contract, so you deal with one accountable
+        partner instead of many.
+      </p>
+
+      <p>
+        Whether you need your premises and gardens kept
+        immaculate, a one-off repair completed, or a plan
+        to make your site cheaper and greener to run,
+        VICWIDE handles it.
+      </p>
+
+      <p>
+        Our job is to take the burden of managing your
+        facilities off your shoulders so you can focus
+        on your business.
+      </p>
+
+      <div class="benefits">
+        <div>One accountable point of contact</div>
+        <div>Comprehensive facility services</div>
+        <div>Efficient, coordinated service delivery</div>
+        <div>Sustainable and collaborative outcomes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION AND MISSION -->
+<section class="section vision">
+  <div class="container">
+
+    <div class="eyebrow">What Drives Us</div>
+    <h2 class="section-title">Our vision and mission.</h2>
+
+    <div class="vision-grid">
+      <article class="vision-card">
+        <h3>Our Vision</h3>
+        <p>
+          To be the standard that others are measured
+          against for facility services in New South Wales
+          and Western Australia, with a perfect client
+          satisfaction record and the best-value service
+          in the industry.
+        </p>
+      </article>
+
+      <article class="vision-card">
+        <h3>Our Mission</h3>
+        <p>
+          To consistently deliver effective and efficient
+          facility services based on sustainable and
+          collaborative outcomes aligned with clients'
+          requirements, while taking the entire burden
+          of managing this process off their shoulders.
+        </p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUR SEVEN SERVICES -->
+<section class="section services" id="services">
+  <div class="container">
+
+    <div class="services-intro">
+      <div class="eyebrow">Our Expertise</div>
+      <h2 class="section-title">
+        Everything your site needs, in one place.
+      </h2>
+      <p class="lead">
+        Choose a single service or combine several.
+        Every contract comes with one point of contact
+        and clear reporting.
+      </p>
+    </div>
+
+    <div class="service-list">
+
+      <!-- 01 SECURITY -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">01</span>
+          <span class="service-name">Security</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Trained security professionals protect your
+            building or property and keep restricted
+            areas secure.
+          </p>
+        </div>
+      </details>
+
+      <!-- 02 MAINTENANCE -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">02</span>
+          <span class="service-name">Maintenance</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Our multi-skilled tradespeople and handymen
+            cover repairs inside and out, including
+            electrical, plumbing, carpentry, gardening,
+            odd jobs and general fix-ups.
+          </p>
+        </div>
+      </details>
+
+      <!-- 03 LANDSCAPING -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">03</span>
+          <span class="service-name">Landscaping</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Well-kept grounds give your property a
+            professional first impression. Our gardeners
+            handle mowing, planting and general grounds
+            care, using lower-emission, quieter equipment
+            to limit disruption.
+          </p>
+        </div>
+      </details>
+
+      <!-- 04 CLEANING -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">04</span>
+          <span class="service-name">Cleaning</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Janitorial and cleaning services for offices
+            and facilities, from weekly or fortnightly
+            routines to occasional deep cleans, delivered
+            by trained cleaners to a consistently high
+            standard.
+          </p>
+        </div>
+      </details>
+
+      <!-- 05 HOUSEKEEPING -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">05</span>
+          <span class="service-name">Housekeeping</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            We manage housekeeping for properties of every
+            size, from small family-owned apartments and
+            hotels to larger chains, so guests enjoy their
+            stay and you have one less thing to manage.
+          </p>
+        </div>
+      </details>
+
+      <!-- 06 WASTE MANAGEMENT -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">06</span>
+          <span class="service-name">Waste Management</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Collection, treatment and disposal of all waste
+            types in any volume, plus recycling and
+            resource recovery where possible.
+          </p>
+        </div>
+      </details>
+
+      <!-- 07 PEST CONTROL -->
+      <details class="service-item">
+        <summary>
+          <span class="service-number">07</span>
+          <span class="service-name">Pest Control</span>
+          <span class="service-plus" aria-hidden="true">+</span>
+        </summary>
+        <div class="service-description">
+          <p>
+            Qualified technicians deal with insects,
+            rodents, weeds and other pests. We identify
+            the risks to your site and bring them under
+            control before they become problems.
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="banner">
+  <div class="container banner-inner">
+    <div>
+      <h2>Less complexity. More confidence.</h2>
+      <p>
+        One accountable partner for the work that keeps
+        your building running. Tell us about your site
+        and we will put together a tailored approach.
+      </p>
+    </div>
+    <a href="#contact" class="btn">
+      Let's Talk About Your Site ↗
+    </a>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="section sustainability" id="sustainability">
+  <div class="container">
+    <div class="eyebrow">Sustainable Facilities</div>
+    <h2 class="section-title">
+      Better buildings.<br>A lighter footprint.
+    </h2>
+
+    <div class="sustainability-grid">
+      <article class="info-card">
+        <h3>Environmental Consciousness</h3>
+        <p>
+          We build sustainability into daily work:
+          low-impact products, responsible disposal,
+          and equipment choices that reduce harm
+          to the environment.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Mindful Resource Management</h3>
+        <p>
+          We use water, energy and materials carefully,
+          and we show you where your site can save,
+          so a greener site is also a cheaper one.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="section" id="areas">
+  <div class="container">
+
+    <div class="eyebrow">Our Locations</div>
+    <h2 class="section-title">
+      Local presence. Reliable support.
+    </h2>
+    <p class="lead">
+      With offices in Parramatta and Maddington,
+      we look after sites across New South Wales
+      and Western Australia. Tell us your location
+      and we will confirm coverage.
+    </p>
+
+    <div class="locations-grid">
+      <article class="location-card">
+        <h3>New South Wales</h3>
+        <p>
+          Level 7, 91 Philip Street<br>
+          Parramatta NSW 2150
+        </p>
+      </article>
+
+      <article class="location-card">
+        <h3>Western Australia</h3>
+        <p>
+          11/11 Alloa Road<br>
+          Maddington WA
+        </p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+
+      <h2 class="section-title">
+        Let's take care<br>of your space.
+      </h2>
+
+      <p class="contact-intro">
+        Share a few details and we'll reply
+        with a tailored quote for your facility needs.
+      </p>
+
+      <div class="contact-info">
+        <strong>Phone</strong>
+        <a href="tel:+61415057305">
+          +61 415 057 305
+        </a>
+      </div>
+
+      <div class="contact-info">
+        <strong>Email</strong>
+        <a href="mailto:vicwidefacilitymanagement@gmail.com">
+          vicwidefacilitymanagement@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-info">
+        <strong>Locations</strong>
+        <span>Parramatta NSW &amp; Maddington WA</span>
+      </div>
+    </div>
+
+    <!-- ENQUIRY FORM -->
+    <form class="contact-form" id="enquiryForm">
+
+      <h3>Request a Quote</h3>
+      <p>Tell us what you need help with.</p>
+
+      <div class="form-row">
+        <label class="field">
+          Full Name
+          <input type="text" name="name"
+            placeholder="Your full name"
+            autocomplete="name" required>
+        </label>
+
+        <label class="field">
+          Email Address
+          <input type="email" name="email"
+            placeholder="you@company.com"
+            autocomplete="email" required>
+        </label>
+      </div>
+
+      <label class="field">
+        Service Needed
+        <select name="service" required>
+          <option value="">Select a service</option>
+          <option>Security</option>
+          <option>Maintenance</option>
+          <option>Landscaping</option>
+          <option>Cleaning</option>
+          <option>Housekeeping</option>
+          <option>Waste Management</option>
+          <option>Pest Control</option>
+          <option>Multiple Services</option>
+        </select>
+      </label>
+
+      <label class="field">
+        Your Message
+        <textarea name="message"
+          placeholder="Tell us about your site, location and requirements..."></textarea>
+      </label>
+
+      <button type="submit" class="btn">
+        Send Enquiry ↗
       </button>
 
-      <nav id="mainNav">
-        <a href="#about">About Us</a>
-        <a href="#services">Our Services</a>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo">
+          VIC<span>WIDE</span>
+          <small>Facility Management</small>
+        </a>
+        <p>
+          One team for every part of your building.
+          Integrated services, one accountable partner.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#sustainability">Sustainability</a>
         <a href="#areas">Locations</a>
-
-        <!-- ONLY ONE GET A QUOTE BUTTON -->
-        <a href="#contact" class="btn">
-          Get a Quote
-          <span aria-hidden="true">↗</span>
-        </a>
-      </nav>
-
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </header>
 
-  <main>
-
-    <!-- HOMEPAGE -->
-
-    <section class="hero">
-      <div class="container">
-
-        <div class="eyebrow">
-          Integrated Facilities Management
-        </div>
-
-        <div class="hero-top">
-          <h1 class="hero-title">
-            One team.
-            <span>Every part of your building.</span>
-          </h1>
-        </div>
-
-        <!-- THREE-IMAGE SLIDER -->
-
-        <div
-          class="slider"
-          id="heroSlider"
-          tabindex="0"
-          aria-label="Facility management image slideshow">
-
-          <div class="slides" id="slides">
-
-            <!-- SLIDE 1 -->
-            <div class="slide">
-              <img
-                src="assets/hero-slide-1.png"
-                alt="Well-maintained modern commercial building"
-                fetchpriority="high">
-
-              <div class="slide-caption">
-                Your building.<br>
-                Our responsibility.
-              </div>
-            </div>
-
-            <!-- SLIDE 2 -->
-            <div class="slide">
-              <img
-                src="assets/hero-slide-2.png"
-                alt="Clean modern corporate office lobby"
-                loading="lazy">
-
-              <div class="slide-caption">
-                Clean spaces.<br>
-                Better experiences.
-              </div>
-            </div>
-
-            <!-- SLIDE 3 -->
-            <div class="slide">
-              <img
-                src="assets/hero-slide-3.png"
-                alt="Professional managed commercial facility"
-                loading="lazy">
-
-              <div class="slide-caption">
-                Well-managed spaces.<br>
-                Lasting impressions.
-              </div>
-            </div>
-
-          </div>
-
-          <!-- SLIDER ARROWS -->
-
-          <button
-            class="slider-arrow slider-prev"
-            id="previousSlide"
-            aria-label="Previous slide">
-            &#10094;
-          </button>
-
-          <button
-            class="slider-arrow slider-next"
-            id="nextSlide"
-            aria-label="Next slide">
-            &#10095;
-          </button>
-
-          <!-- SLIDER INDICATORS -->
-
-          <div class="slider-dots">
-            <button
-              class="slider-dot active"
-              data-slide="0"
-              aria-label="Show slide 1"></button>
-
-            <button
-              class="slider-dot"
-              data-slide="1"
-              aria-label="Show slide 2"></button>
-
-            <button
-              class="slider-dot"
-              data-slide="2"
-              aria-label="Show slide 3"></button>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ABOUT US -->
-
-    <section id="about">
-      <div class="container about-grid">
-
-        <div class="about-photo">
-          <div class="about-badge">
-            Your building.<br>
-            Our responsibility.
-          </div>
-        </div>
-
-        <div class="about-content">
-
-          <div class="eyebrow">
-            Who We Are
-          </div>
-
-          <h2 class="section-title">
-            Facilities management that takes the weight off you.
-          </h2>
-
-          <p>
-            VICWIDE Facility Management looks after cleaning,
-            maintenance, compliance, grounds and more under
-            a single contract, so you deal with one accountable
-            partner instead of many.
-          </p>
-
-          <p>
-            Whether you need your premises and gardens kept
-            immaculate, a one-off repair completed, or a plan
-            to make your site cheaper and greener to run,
-            VICWIDE handles it.
-          </p>
-
-          <p>
-            Our job is to take the burden of managing your
-            facilities off your shoulders so you can focus
-            on your business.
-          </p>
-
-          <div class="benefits">
-            <div>One accountable point of contact</div>
-            <div>Comprehensive facility services</div>
-            <div>Efficient, coordinated service delivery</div>
-            <div>Sustainable and collaborative outcomes</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- VISION AND MISSION -->
-
-    <section class="vision">
-      <div class="container">
-
-        <div class="eyebrow">
-          What Drives Us
-        </div>
-
-        <h2 class="section-title">
-          Our vision and mission.
-        </h2>
-
-        <div class="vision-grid">
-
-          <article class="vision-card">
-            <h3>Our Vision</h3>
-
-            <p>
-              To be the standard that others are measured
-              against for facility services in New South Wales
-              and Western Australia, with a perfect client
-              satisfaction record and the best-value service
-              in the industry.
-            </p>
-          </article>
-
-          <article class="vision-card">
-            <h3>Our Mission</h3>
-
-            <p>
-              To consistently deliver effective and efficient
-              facility services based on sustainable and
-              collaborative outcomes aligned with clients'
-              requirements, while taking the entire burden
-              of managing this process off their shoulders.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- OUR SERVICES -->
-
-    <section id="services">
-      <div class="container">
-
-        <div class="section-intro">
-
-          <div class="eyebrow">
-            Our Expertise
-          </div>
-
-          <h2 class="section-title">
-            Everything your site needs, in one place.
-          </h2>
-
-          <p class="lead">
-            Choose a single service or combine several.
-            Every contract comes with one point of contact
-            and clear reporting.
-          </p>
-
-        </div>
-
-        <!-- SERVICE FILTERS -->
-
-        <div class="filters" id="serviceFilters">
-
-          <button
-            class="filter active"
-            data-filter="all">
-            All Services
-          </button>
-
-          <button
-            class="filter"
-            data-filter="core">
-            Core Services
-          </button>
-
-          <button
-            class="filter"
-            data-filter="technical">
-            Technical
-          </button>
-
-          <button
-            class="filter"
-            data-filter="specialist">
-            Specialist
-          </button>
-
-        </div>
-
-        <div class="service-grid" id="serviceGrid">
-          <!-- Services loaded using JavaScript -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
-
-    <section class="banner">
-      <div class="container banner-inner">
-
-        <div>
-          <h2>
-            Less complexity. More confidence.
-          </h2>
-
-          <p>
-            One accountable partner for the work that keeps
-            your building running. Tell us about your site
-            and we will put together a tailored approach.
-          </p>
-        </div>
-
-        <a href="#contact" class="btn">
-          Let's Talk About Your Site
-          <span aria-hidden="true">↗</span>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- SUSTAINABILITY -->
-
-    <section class="sustainability" id="sustainability">
-      <div class="container">
-
-        <div class="eyebrow">
-          Sustainable Facilities
-        </div>
-
-        <h2 class="section-title">
-          Better buildings.<br>
-          A lighter footprint.
-        </h2>
-
-        <div class="sustainability-grid">
-
-          <article class="info-card">
-            <h3>Environmental Consciousness</h3>
-
-            <p>
-              We build sustainability into daily work:
-              low-impact products, responsible disposal,
-              and equipment choices that reduce harm
-              to the environment.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3>Mindful Resource Management</h3>
-
-            <p>
-              We use water, energy and materials carefully,
-              and we show you where your site can save,
-              so a greener site is also a cheaper one.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- LOCATIONS -->
-
-    <section id="areas">
-      <div class="container">
-
-        <div class="eyebrow">
-          Our Locations
-        </div>
-
-        <h2 class="section-title">
-          Local presence. Reliable support.
-        </h2>
-
-        <p class="lead">
-          With offices in Parramatta and Maddington,
-          we look after sites across New South Wales
-          and Western Australia. Tell us your location
-          and we will confirm coverage.
-        </p>
-
-        <div class="locations-grid">
-
-          <article class="location-card">
-
-            <h3>New South Wales</h3>
-
-            <p>
-              Level 7, 91 Philip Street<br>
-              Parramatta NSW 2150
-            </p>
-
-          </article>
-
-          <article class="location-card">
-
-            <h3>Western Australia</h3>
-
-            <p>
-              11/11 Alloa Road<br>
-              Maddington WA
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT US -->
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-
-        <div>
-
-          <div class="eyebrow">
-            Get In Touch
-          </div>
-
-          <h2 class="section-title">
-            Let's take care<br>
-            of your space.
-          </h2>
-
-          <p style="margin-bottom:35px">
-            Share a few details and we'll reply
-            with a tailored quote for your facility needs.
-          </p>
-
-          <!-- COMPANY PHONE NUMBER -->
-
-          <div class="contact-info">
-            <strong>Phone</strong>
-
-            <a href="tel:+61415057305">
-              +61 415 057 305
-            </a>
-          </div>
-
-          <!-- COMPANY EMAIL ADDRESS -->
-
-          <div class="contact-info">
-            <strong>Email</strong>
-
-            <a href="mailto:info@vicwide.com">
-              info@vicwide.com
-            </a>
-          </div>
-
-          <!-- OFFICE LOCATIONS -->
-
-          <div class="contact-info">
-            <strong>Locations</strong>
-
-            <span>
-              Parramatta NSW &amp; Maddington WA
-            </span>
-          </div>
-
-        </div>
-
-        <!-- ENQUIRY FORM -->
-
-        <form class="contact-form" id="enquiryForm">
-
-          <h3>Request a Quote</h3>
-
-          <p>
-            Tell us what you need help with.
-          </p>
-
-          <div class="form-row">
-
-            <label class="field">
-              Full Name
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Your full name"
-                autocomplete="name"
-                required>
-            </label>
-
-            <label class="field">
-              Email Address
-
-              <input
-                type="email"
-                name="email"
-                placeholder="you@company.com"
-                autocomplete="email"
-                required>
-            </label>
-
-          </div>
-
-          <label class="field">
-            Service Needed
-
-            <select name="service">
-              <option>Commercial cleaning</option>
-              <option>Maintenance</option>
-              <option>Fire and compliance</option>
-              <option>Landscaping</option>
-              <option>Security</option>
-              <option>Full facilities management</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label class="field">
-            Your Message
-
-            <textarea
-              name="message"
-              placeholder="Tell us about your site, location and requirements..."></textarea>
-          </label>
-
-          <button type="submit" class="btn">
-            Send Enquiry
-            <span aria-hidden="true">↗</span>
-          </button>
-
-          <p id="formNote" role="status"></p>
-
-        </form>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-
-          <a href="#top" class="logo">
-            VIC<span>WIDE</span>
-            <small>Facility Management</small>
-          </a>
-
-          <p>
-            One team for every part of your building.
-            Integrated services, one accountable partner.
-          </p>
-
-        </div>
-
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#sustainability">Sustainability</a>
-          <a href="#areas">Locations</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-      </div>
-
-      <!-- ABN REMOVED -->
-
-      <div class="footer-bottom">
-        &copy; 2026 VICWIDE Facility Management.
-      </div>
-
+    <div class="footer-bottom">
+      &copy; 2026 VICWIDE Facility Management.
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- JAVASCRIPT -->
+<script>
+/* MOBILE NAVIGATION */
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-  <script>
+menuToggle.addEventListener("click", () => {
+  const opened = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(opened));
+  menuToggle.textContent = opened ? "×" : "☰";
+});
 
-    /* MOBILE NAVIGATION */
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
 
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+/* IMAGE SLIDER */
+const slidesTrack = document.getElementById("slides");
+const slider = document.getElementById("heroSlider");
+const dots = document.querySelectorAll(".slider-dot");
+const slideElements = document.querySelectorAll(".slide");
+let currentSlide = 0;
+let startX = null;
 
-    menuToggle.addEventListener("click", () => {
+function showSlide(index) {
+  const total = slideElements.length;
+  currentSlide = (index + total) % total;
 
-      const opened = mainNav.classList.toggle("open");
+  slidesTrack.style.transform =
+    `translateX(-${currentSlide * 100}%)`;
 
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(opened)
-      );
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+    dot.setAttribute(
+      "aria-current",
+      i === currentSlide ? "true" : "false"
+    );
+  });
 
-      menuToggle.textContent = opened ? "×" : "☰";
+  slideElements.forEach((slide, i) => {
+    slide.setAttribute(
+      "aria-hidden",
+      i === currentSlide ? "false" : "true"
+    );
+  });
+}
 
-    });
+document.getElementById("previousSlide")
+  .addEventListener("click", () => showSlide(currentSlide - 1));
 
-    mainNav.querySelectorAll("a").forEach(link => {
+document.getElementById("nextSlide")
+  .addEventListener("click", () => showSlide(currentSlide + 1));
 
-      link.addEventListener("click", () => {
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => showSlide(i));
+});
 
-        mainNav.classList.remove("open");
+/* KEYBOARD NAVIGATION */
+slider.addEventListener("keydown", event => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    showSlide(currentSlide - 1);
+  } else if (event.key === "ArrowRight") {
+    event.preventDefault();
+    showSlide(currentSlide + 1);
+  }
+});
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+/* TOUCH SWIPING */
+slider.addEventListener("touchstart", event => {
+  startX = event.changedTouches[0].screenX;
+}, {passive:true});
 
-        menuToggle.textContent = "☰";
+slider.addEventListener("touchend", event => {
+  if (startX === null) return;
+  const difference = event.changedTouches[0].screenX - startX;
+  if (Math.abs(difference) > 45) {
+    showSlide(currentSlide + (difference < 0 ? 1 : -1));
+  }
+  startX = null;
+}, {passive:true});
 
+showSlide(0);
+
+/* SERVICES: OPEN ONE AT A TIME */
+const serviceItems = document.querySelectorAll(".service-item");
+
+serviceItems.forEach(item => {
+  item.addEventListener("toggle", () => {
+    if (item.open) {
+      serviceItems.forEach(other => {
+        if (other !== item) other.open = false;
       });
-
-    });
-
-
-    /* THREE IMAGE SLIDER */
-
-    const slidesTrack = document.getElementById("slides");
-
-    const slider = document.getElementById("heroSlider");
-
-    const dots = document.querySelectorAll(".slider-dot");
-
-    const slideElements = document.querySelectorAll(".slide");
-
-    let currentSlide = 0;
-    let startX = null;
-
-    function showSlide(index) {
-
-      const totalSlides = slideElements.length;
-
-      currentSlide =
-        (index + totalSlides) % totalSlides;
-
-      slidesTrack.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
-
-      dots.forEach((dot, i) => {
-
-        dot.classList.toggle(
-          "active",
-          i === currentSlide
-        );
-
-        dot.setAttribute(
-          "aria-current",
-          i === currentSlide ? "true" : "false"
-        );
-
-      });
-
-      slideElements.forEach((slide, i) => {
-
-        slide.setAttribute(
-          "aria-hidden",
-          i === currentSlide ? "false" : "true"
-        );
-
-      });
-
     }
-
-    /* PREVIOUS SLIDE */
-
-    document
-      .getElementById("previousSlide")
-      .addEventListener("click", () => {
-
-        showSlide(currentSlide - 1);
-
-      });
-
-    /* NEXT SLIDE */
-
-    document
-      .getElementById("nextSlide")
-      .addEventListener("click", () => {
-
-        showSlide(currentSlide + 1);
-
-      });
-
-    /* SLIDE INDICATORS */
-
-    dots.forEach((dot, i) => {
-
-      dot.addEventListener("click", () => {
-
-        showSlide(i);
-
-      });
-
-    });
-
-    /* KEYBOARD NAVIGATION */
-
-    slider.addEventListener("keydown", event => {
-
-      if (event.key === "ArrowLeft") {
-
-        event.preventDefault();
-
-        showSlide(currentSlide - 1);
-
-      }
-
-      if (event.key === "ArrowRight") {
-
-        event.preventDefault();
-
-        showSlide(currentSlide + 1);
-
-      }
-
-    });
-
-    /* TOUCH AND SWIPE */
-
-    slider.addEventListener(
-      "touchstart",
-      event => {
-
-        startX =
-          event.changedTouches[0].screenX;
-
-      },
-      { passive: true }
-    );
-
-    slider.addEventListener(
-      "touchend",
-      event => {
-
-        if (startX === null) return;
-
-        const endX =
-          event.changedTouches[0].screenX;
-
-        const difference = endX - startX;
-
-        if (Math.abs(difference) > 45) {
-
-          showSlide(
-            currentSlide + (difference < 0 ? 1 : -1)
-          );
-
-        }
-
-        startX = null;
-
-      },
-      { passive: true }
-    );
-
-    showSlide(0);
-
-
-    /* FACILITY MANAGEMENT SERVICES */
-
-    const services = [
-
-      {
-        title: "Asset Management",
-        category: "technical",
-        description:
-          "We look after your buildings, equipment and other assets so they stay safe, usable and comfortable. Regular upkeep now saves you time and money later."
-      },
-
-      {
-        title: "Concierge",
-        category: "specialist",
-        description:
-          "A welcoming first point of contact for guests and visitors, on hand around the clock to help with whatever they need. Well suited to hotels, serviced apartments and commercial lobbies."
-      },
-
-      {
-        title: "Mechanical and Electrical Systems",
-        category: "technical",
-        description:
-          "When power, heating, cooling or other plant fails, operations stall and staff and customers notice. Our qualified contractors keep your systems serviced and running reliably."
-      },
-
-      {
-        title: "Fire and Compliance",
-        category: "technical",
-        description:
-          "Fire safety equipment only protects people if it works when needed. We schedule regular checks and servicing, and keep your site compliant and ready for an emergency."
-      },
-
-      {
-        title: "Energy Management",
-        category: "technical",
-        description:
-          "We review your energy and utility bills, find where you are using more than you need, and help you make changes that lower costs and your environmental footprint."
-      },
-
-      {
-        title: "Security",
-        category: "core",
-        description:
-          "Trained security professionals protect your building or property and keep restricted areas secure."
-      },
-
-      {
-        title: "Maintenance",
-        category: "core",
-        description:
-          "Our multi-skilled tradespeople and handymen cover repairs inside and out, including electrical, plumbing, carpentry, gardening, odd jobs and general fix-ups."
-      },
-
-      {
-        title: "Landscaping",
-        category: "core",
-        description:
-          "Well-kept grounds give your property a professional first impression. Our gardeners handle mowing, planting and general grounds care, using lower-emission, quieter equipment to limit disruption."
-      },
-
-      {
-        title: "Space Planning",
-        category: "specialist",
-        description:
-          "Moving to a bigger site or reworking your current one? We help you lay out the space so it is safe, practical and comfortable for your team and your customers."
-      },
-
-      {
-        title: "Cleaning",
-        category: "core",
-        description:
-          "Janitorial and cleaning services for offices and facilities, from weekly or fortnightly routines to occasional deep cleans, delivered by trained cleaners to a consistently high standard."
-      },
-
-      {
-        title: "Housekeeping",
-        category: "core",
-        description:
-          "We manage housekeeping for properties of every size, from small family-owned apartments and hotels to larger chains, so guests enjoy their stay and you have one less thing to manage."
-      },
-
-      {
-        title: "Stewarding",
-        category: "specialist",
-        description:
-          "Experienced kitchen stewards keep commercial kitchens and cooking equipment clean, orderly and safe, so you can focus on the food."
-      },
-
-      {
-        title: "Event Planning and Catering",
-        category: "specialist",
-        description:
-          "End-to-end planning for businesses large and small, including venues, decor, catering, music and DJs. Suited to exhibitions, reunions, anniversaries, end-of-year parties and private events."
-      },
-
-      {
-        title: "Stationery and Office Supplies",
-        category: "specialist",
-        description:
-          "We track stock and reorder for you, so your office never runs short of stationery and supplies."
-      },
-
-      {
-        title: "Waste Management",
-        category: "core",
-        description:
-          "Collection, treatment and disposal of all waste types in any volume, plus recycling and resource recovery where possible."
-      },
-
-      {
-        title: "Pest Control",
-        category: "core",
-        description:
-          "Qualified technicians deal with insects, rodents, weeds and other pests. We identify the risks to your site and bring them under control before they become problems."
-      }
-
-    ];
-
-
-    /* DISPLAY SERVICE CARDS */
-
-    const serviceGrid =
-      document.getElementById("serviceGrid");
-
-    services.forEach((service, index) => {
-
-      const card = document.createElement("article");
-
-      card.className = "service-card";
-
-      card.dataset.category = service.category;
-
-      const number = document.createElement("div");
-
-      number.className = "service-number";
-
-      number.textContent =
-        String(index + 1).padStart(2, "0");
-
-      const heading = document.createElement("h3");
-
-      heading.textContent = service.title;
-
-      const description = document.createElement("p");
-
-      description.textContent = service.description;
-
-      card.append(number, heading, description);
-
-      serviceGrid.appendChild(card);
-
-    });
-
-
-    /* FILTER SERVICES */
-
-    const filterButtons =
-      document.querySelectorAll(".filter");
-
-    filterButtons.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const category =
-          button.dataset.filter;
-
-        filterButtons.forEach(other => {
-
-          other.classList.remove("active");
-
-        });
-
-        button.classList.add("active");
-
-        document
-          .querySelectorAll(".service-card")
-          .forEach(card => {
-
-            card.hidden =
-              category !== "all" &&
-              card.dataset.category !== category;
-
-          });
-
-      });
-
-    });
-
-
-    /* ENQUIRY FORM */
-
-    const enquiryForm =
-      document.getElementById("enquiryForm");
-
-    enquiryForm.addEventListener("submit", event => {
-
-      event.preventDefault();
-
-      const data = new FormData(enquiryForm);
-
-      const name = data.get("name");
-
-      const email = data.get("email");
-
-      const service = data.get("service");
-
-      const message = data.get("message");
-
-      /* EMAIL SUBJECT */
-
-      const subject =
-        "Quote request: " + service;
-
-      /* EMAIL BODY */
-
-      const body =
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Service: " + service + "\n\n" +
-        "Message:\n" + message;
-
-      /* COMPANY EMAIL ADDRESS */
-
-      const recipient = "info@vicwide.com";
-
-      document.getElementById("formNote").textContent =
-        "Opening your email application to send the enquiry.";
-
-      /* OPEN EMAIL APPLICATION */
-
-      window.location.href =
-        "mailto:" + recipient +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-    });
-
-  </script>
+  });
+});
+
+/* CONTACT FORM */
+const enquiryForm = document.getElementById("enquiryForm");
+
+enquiryForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const data = new FormData(enquiryForm);
+  const name = data.get("name");
+  const email = data.get("email");
+  const service = data.get("service");
+  const message = data.get("message");
+
+  const subject = "Quote request: " + service;
+  const body =
+    "Name: " + name + "\n" +
+    "Email: " + email + "\n" +
+    "Service: " + service + "\n\n" +
+    "Message:\n" + message;
+
+  const recipient = "info@vicwide.com";
+
+  document.getElementById("formNote").textContent =
+    "Opening your email application to send the enquiry.";
+
+  window.location.href =
+    "mailto:" + recipient +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+});
+</script>
 
 </body>
 </html>
